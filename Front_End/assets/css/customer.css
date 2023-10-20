@@ -100,6 +100,8 @@ main>section:nth-child(2)>div:nth-child(2)>section>aside {
     margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 5px;
+    transition: all 2s;
+
 }
 
 #OUR_SERVICE{
