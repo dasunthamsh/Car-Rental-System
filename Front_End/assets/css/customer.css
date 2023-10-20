@@ -66,12 +66,56 @@ a:hover{     /*change mouse fourcus color to yellow in menu*/
 #mainClassDiv>h3:nth-child(3) { /*HELPS YOU_____*/
      position: relative;
     top: -10%;
-    color: red;
+    color: #0055ff;
 }
 
-/*#mainBackGround{*/
-/*    background-image: url("../img/mainBackground.png");*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
+                    /*about us*/
 
-/*}*/
+main>section:nth-child(2) {
+    position: relative;
+    top: 45vh;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+main>section:nth-child(2)>div:nth-child(2){
+    position: relative;
+    top: 100px;
+
+}
+
+main>section:nth-child(2)>div:nth-child(2)>section {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+main>section:nth-child(2)>div:nth-child(2)>section>aside {
+    width: 300px;
+    height: 150px;
+    background: #d7d4d4;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 5px;
+}
+
+#OUR_SERVICE{
+    font-family: fantasy;
+    font-size: 60px;
+    opacity: 20%;
+    bottom: 20px;
+    position: relative;
+
+}
+
+#our_servicee{
+    font-family: sans-serif;
+    font-size: 47px;
+    position: relative;
+    top: 20px;
+    left: 25px;
+
+}
