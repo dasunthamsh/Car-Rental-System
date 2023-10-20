@@ -1,0 +1,5 @@
+main>section:nth-child(2)>div:nth-child(2)>section>aside:hover {
+    width: 400px;
+    height: 250px;
+    background: #0a58ca;
+}
