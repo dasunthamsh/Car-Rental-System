@@ -1,0 +1,77 @@
+
+/*------------------------Scroll bar--------------------------*/
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d9d9d7;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffb400;
+}
+a:hover{     /*change mouse fourcus color to yellow in menu*/
+    color: #ffb400;
+    font-weight: bold;
+
+}
+
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    margin: 0 30px;
+}
+
+#mainCarPng{
+    width: 550px;
+    height: 350px;
+    position: relative;
+    left: 10px;
+    top: 130px;
+}
+
+#mainClassDiv{
+    position: absolute;
+    left: 35%;
+    bottom: 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    /*color: white;*/
+}
+
+#mainClassDiv>h1:nth-child(1){  /*CAR RENTAL*/
+    font-size: 150px;
+    font-family: fantasy;
+    opacity: 20%;
+}
+
+#mainClassDiv>h2:nth-child(2){  /*car rental*/
+    font-size: 130px;
+    font-family: sans-serif;
+    position: relative;
+    bottom: 110px;
+}
+
+#mainClassDiv>h3:nth-child(3) { /*HELPS YOU_____*/
+     position: relative;
+    top: -10%;
+    color: red;
+}
+
+/*#mainBackGround{*/
+/*    background-image: url("../img/mainBackground.png");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+
+/*}*/
