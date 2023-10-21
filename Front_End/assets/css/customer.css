@@ -23,6 +23,15 @@ a:hover{     /*change mouse fourcus color to yellow in menu*/
 
 }
 
+header{
+    position: fixed;
+}
+
+
+header>nav>div>ul{
+    position: relative;
+    left: 40vw;
+}
 
 .navbar-nav .nav-link {
     font-weight: bold;
