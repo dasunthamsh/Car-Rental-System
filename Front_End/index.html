@@ -78,7 +78,7 @@
                     <section>
                         <aside>
                             <div>
-                                <img src="assets/img/user.png" width="50">
+                                <img src="assets/img/repair-tool.png" width="50">
                                 <h5>Personal driver<br>____</h5>
                             </div>
                             <h6>Rent your favorite driver</h6>
@@ -86,7 +86,7 @@
                         </aside>
                         <aside>
                             <div>
-                                <img src="assets/img/location.png"  width="50">
+                                <img src="assets/img/shield.png"  width="50">
                                 <h5>Car navigation<br>____</h5>
                             </div>
                             <h6>fiend place to return</h6>
@@ -96,7 +96,7 @@
                     <section>
                         <aside>
                             <div>
-                                <img src="assets/img/fuel.png"  width="50">
+                                <img src="assets/img/interest-rate.png"  width="50">
                                 <h5>Fuel plans<br>____</h5>
                             </div>
                             <h6>you can choes fuel plans </h6>
@@ -104,7 +104,7 @@
                         </aside>
                         <aside>
                             <div>
-                                <img src="assets/img/coin.png"  width="50">
+                                <img src="assets/img/fleet-management.png"  width="50">
                                 <h5>Easy cash<br>____</h5>
                             </div>
                             <h6>you can choes fuel plans</h6>
@@ -221,14 +221,31 @@
             </div>
         </section>
 
-                                                <!--our vehicle -->
+                                                <!--register -->
 
         <section>
-            <div class="container">
-                <h2 class="mt-5">Registration Form</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <form>
+            <div>
+                <h1 id="register">Our vehicles</h1>
+                <h1 id="REGISTERR">OUR VEHICLES</h1>
+            </div>
+            <div class="container" >
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Role">Role</label>
+                                <select class="form-control" id="Role" required>
+                                    <option value="">Select a role</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Customer">User</option>
+                                    <option value="Driver">Moderator</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerId">Customer id</label>
+                                <input type="text" class="form-control" id="customerId" placeholder="Enter your name" required>
+                            </div>
                             <div class="form-group">
                                 <label for="customerName">Customer Name</label>
                                 <input type="text" class="form-control" id="customerName" placeholder="Enter your name" required>
@@ -241,36 +258,25 @@
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
                             </div>
-                            <div class="form-group">
-                                <label for="phoneNumber">Phone Number</label>
-                                <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number" required>
+                            <div class="form-group mt-3">
+                                <label for="nicPhoto">Upload NIC Photo</label>
+                                <input type="file" class="form-control-file" id="nicPhoto" required>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-6">
-                        <form>
-                            <div class="form-group">
-                                <label for="nicNumber">NIC Number</label>
-                                <input type="text" class="form-control" id="nicNumber" placeholder="Enter your NIC number" required>
-                            </div>
+                        </div>
+
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="idCardNumber">ID Card Number</label>
                                 <input type="text" class="form-control" id="idCardNumber" placeholder="Enter your ID card number" required>
                             </div>
                             <div class="form-group">
-                                <label for="idCardPhoto">Upload ID Card Photo</label>
-                                <input type="file" class="form-control-file" id="idCardPhoto" required>
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number" required>
                             </div>
                             <div class="form-group">
-                                <label for="nicPhoto">Upload NIC Photo</label>
-                                <input type="file" class="form-control-file" id="nicPhoto" required>
+                                <label for="nicNumber">NIC Number</label>
+                                <input type="text" class="form-control" id="nicNumber" placeholder="Enter your NIC number" required>
                             </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <form>
                             <div class="form-group">
                                 <label for="username">Username</label>
                                 <input type="text" class="form-control" id="username" placeholder="Choose a username" required>
@@ -279,10 +285,15 @@
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="password" placeholder="Choose a password" required>
                             </div>
-                        </form>
+                            <div class="form-group mt-3">
+                                <label for="idCardPhoto">Upload ID Card Photo</label>
+                                <input type="file" class="form-control-file" id="idCardPhoto" required>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-primary" id="btnReg">Register</button>
+                </form>
             </div>
 
         </section>

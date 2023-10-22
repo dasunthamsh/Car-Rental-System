@@ -43,7 +43,7 @@ header>nav>div>ul{
     height: 350px;
     position: relative;
     left: 10px;
-    top: 130px;
+    top: 200px;
 }
 
 #mainClassDiv{
@@ -218,6 +218,10 @@ main>section:nth-child(3)>aside:nth-child(1) {
     margin-left: 100px;
 }
 
+.ovrVehicleClass>h1{
+    font-family: fantasy;
+    font-size: 50px;
+}
 
                                         /*register*/
 
@@ -229,13 +233,39 @@ main>section:nth-child(4) {
 }
 
 
+main>section:nth-child(4)>div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
 
+#REGISTERR{
+    font-family: fantasy;
+    font-size: 60px;
+    opacity: 20%;
+    bottom: 20px;
+    position: relative;
+    right: 10%;
 
+}
 
+#register{
+    position: relative;
+    font-family: sans-serif;
+    font-size: 47px;
+    left: 10%;
+}
 
+main>section:nth-child(4)>div:nth-child(2) {
+    position: relative;
+    top: 150px;
+}
 
-
-
+#btnReg{
+    position: relative;
+    left: 90%;
+    top: 30px;
+}
 
 
 
