@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Back_End:war">
+    <output-path>$PROJECT_DIR$/Back_End/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Back_End</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Back_End-1.0.0.war">
+      <element id="artifact" artifact-name="Back_End:war exploded" />
+    </root>
+  </artifact>
+</component>
