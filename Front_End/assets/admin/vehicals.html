@@ -48,35 +48,33 @@
             <form>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label for="Role" class="fw-bold">Role</label>
-                            <select class="form-control" id="Role" required>
-                                <option value="">Select a role</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Customer">User</option>
-                                <option value="Driver">Moderator</option>
-                                <!-- Add more options as needed -->
-                            </select>
+                        <div class="form-group mb-3 fw-bold">
+                            <label for="vehicleId" class="fw-bold">Vehicle id</label>
+                            <input type="text" class="form-control" id="vehicleId" placeholder="CRI-001" required>
                         </div>
                         <div class="form-group mb-3 fw-bold">
-                            <label for="customerId" class="fw-bold">Customer id</label>
-                            <input type="text" class="form-control" id="customerId" placeholder="Enter your name" required>
+                            <label for="brand" class="fw-bold">Brand</label>
+                            <input type="text" class="form-control" id="brand" placeholder="Brand" required>
+                        </div>
+                        <div class="form-group mb-3 fw-bold">
+                            <label for="model" class="fw-bold">Model</label>
+                            <input type="text" class="form-control" id="model" placeholder="Model" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="customerName" class="fw-bold">Customer Name</label>
-                            <input type="text" class="form-control" id="customerName" placeholder="Enter your name" required>
+                            <label for="type" class="fw-bold">Type</label>
+                            <select class="form-control" id="type" required>
+                                <option value="General">general</option>
+                                <option value="Premium">User</option>
+                                <option value="Luxury">Moderator</option>
+                            </select>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="address" class="fw-bold">Address</label>
-                            <input type="text" class="form-control" id="address" placeholder="Enter your address" required>
+                            <label for="frontView" class="fw-bold">Front view</label><br>
+                            <input type="file" class="form-control-file form-control-file border border-dark rounded" id="frontView" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="email" class="fw-bold">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="nicPhoto" class="fw-bold">Upload NIC Photo</label>
-                            <input type="file" class="form-control-file" id="nicPhoto" required>
+                            <label for="backView" class="fw-bold">Back view</label><br>
+                            <input type="file" class="form-control-file border border-dark rounded" id="backView" required>
                         </div>
                     </div>
 
