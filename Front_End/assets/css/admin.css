@@ -62,3 +62,9 @@ header>nav>div>ul{
     position: relative;
     top: 150px;
 }
+
+#buttonsVehi{
+    position: relative;
+    left: 83%;
+    top: 30px;
+}

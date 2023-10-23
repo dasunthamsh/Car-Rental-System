@@ -47,7 +47,7 @@
         <div class="container" id="vehicleForm">
             <form>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group mb-3 fw-bold">
                             <label for="vehicleId" class="fw-bold">Vehicle id</label>
                             <input type="text" class="form-control" id="vehicleId" placeholder="CRI-001" required>
@@ -78,34 +78,78 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label for="idCardNumber" class="fw-bold">ID Card Number</label>
-                            <input type="text" class= "form-control" id="idCardNumber" placeholder="Enter your ID card number" required>
+                            <label for="sideView" class="fw-bold">side view</label><br>
+                            <input type="file" class="form-control-file form-control-file border border-dark rounded" id="sideView" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="phoneNumber" class="fw-bold">Phone Number</label>
-                            <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number" required>
+                            <label for="interior" class="fw-bold">interior</label><br>
+                            <input type="file" class="form-control-file border border-dark rounded" id="interior" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="nicNumber" class="fw-bold">NIC Number</label>
-                            <input type="text" class="form-control" id="nicNumber" placeholder="Enter your NIC number" required>
+                            <label for="nuOfPassenger" class="fw-bold">Number of passenger</label>
+                            <input type="text" class= "form-control" id="nuOfPassenger" placeholder="No Of Passenger" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="username" class="fw-bold">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Choose a username" required>
+                            <label for="transmission" class="fw-bold">Type</label>
+                            <select class="form-control" id="transmission" required>
+                                <option value="Manual">general</option>
+                                <option value="Auto">User</option>
+                            </select>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="password" class="fw-bold">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Choose a password" required>
+                            <label for="fuelType" class="fw-bold">Type</label>
+                            <select class="form-control" id="fuelType" required>
+                                <option value="Diesel">general</option>
+                                <option value="Petrol">User</option>
+                            </select>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="idCardPhoto" class="fw-bold">Upload ID Card Photo</label>
-                            <input type="file" class="form-control-file" id="idCardPhoto" required>
+                            <label for="dailyRate" class="fw-bold">Daily Rate</label>
+                            <input type="tel" class="form-control" id="dailyRate" placeholder="Daily Rate" required>
                         </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group mb-3">
+                            <label for="monthlyRate" class="fw-bold">Monthly rate</label><br>
+                            <input type="file" class="form-control-file form-control-file border border-dark rounded" id="monthlyRate" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="priceForExtraKM" class="fw-bold">Price for extra KM</label><br>
+                            <input type="file" class="form-control-file form-control-file border border-dark rounded" id="priceForExtraKM" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="regNum" class="fw-bold">Register Number</label><br>
+                            <input type="file" class="form-control-file border border-dark rounded" id="regNum" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="freeMileage" class="fw-bold">Free Mileage</label>
+                            <input type="text" class= "form-control" id="freeMileage" placeholder="No Of Passenger" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="color" class="fw-bold">color</label>
+                            <input type="tel" class="form-control" id="color" placeholder="Daily Rate" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="Availability" class="fw-bold">Vehicle Availability Type</label>
+                            <select class="form-control" id="Availability" required>
+                                <option value="Diesel">general</option>
+                                <option value="Petrol">User</option>
+                            </select>
+                        </div>
+
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary fw-bold" id="btnReg">Register</button>
+
+                <div id="buttonsVehi">
+                    <button type="button" class="btn btn-primary fw-bold" id="save">save</button>
+                    <button type="button" class="btn btn-primary fw-bold" id="update">update</button>
+                    <button type="button" class="btn btn-primary fw-bold" id="delete">delete</button>
+                </div>
+
             </form>
         </div>
 
