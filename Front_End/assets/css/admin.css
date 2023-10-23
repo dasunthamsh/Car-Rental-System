@@ -57,6 +57,11 @@ header>nav>div>ul{
                                     /*driver details*/
                                     /*payment*/
                                     /*rent request*/
+
+main>section:nth-child(1){
+    position: relative;
+    top: 150px;
+}
                                     /*add vehicle*/
 #vehicleForm{
     position: relative;
