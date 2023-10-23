@@ -1,0 +1,60 @@
+/*------------------------Scroll bar--------------------------*/
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d9d9d7;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffb400;
+}
+a:hover{     /*change mouse fourcus color to yellow in menu*/
+    color: #ffb400;
+    font-weight: bold;
+
+}
+
+header{
+    position: fixed;
+}
+
+
+header>nav>div>ul{
+    position: relative;
+    left: 15vw;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    margin: 0 20px;
+}
+
+
+
+                                    /*customer details*/
+                                    /*dashboard*/
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: #007bff; /* Blue background color */
+    margin: 10px; /* Add some margin for spacing */
+    position: relative;
+    top: 150px;
+    left: 100px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;}
+
+
+                                    /*driver details*/
+                                    /*payment*/
+                                    /*rent request*/
+                                    /*add vehicle*/
