@@ -58,3 +58,7 @@ header>nav>div>ul{
                                     /*payment*/
                                     /*rent request*/
                                     /*add vehicle*/
+#vehicleForm{
+    position: relative;
+    top: 150px;
+}
