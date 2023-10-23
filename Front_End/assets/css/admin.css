@@ -48,7 +48,7 @@ header>nav>div>ul{
     background-color: #007bff; /* Blue background color */
     margin: 10px; /* Add some margin for spacing */
     position: relative;
-    top: 150px;
+    top: 50px;
     left: 100px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;}
@@ -60,7 +60,7 @@ header>nav>div>ul{
 
 main>section:nth-child(1){
     position: relative;
-    top: 150px;
+    top: 50px;
 }
                                     /*add vehicle*/
 #vehicleForm{
