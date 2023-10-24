@@ -34,7 +34,7 @@ public class Customer {
     private String licenceImage;
     private String userName;
     private String password;
-    private String status;
+    //private String status;
 
 
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
