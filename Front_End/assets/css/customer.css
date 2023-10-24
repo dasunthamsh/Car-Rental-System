@@ -268,6 +268,11 @@ main>section:nth-child(4)>div:nth-child(2) {
 }
 
 
+#footer{
+    position: relative;
+    top: 160vh;
+}
+
 
 
 

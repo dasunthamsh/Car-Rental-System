@@ -50,3 +50,9 @@ $(document).ready(function() {
         }
     });
 });
+
+
+$("#btnReg").click(function (){
+
+
+});
