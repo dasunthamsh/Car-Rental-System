@@ -44,7 +44,7 @@
           <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:3.0.7" />
           <element id="library" level="project" name="Maven: org.jvnet.staxex:stax-ex:1.8" />
           <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
-          <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.0.32" />
+          <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.1.0" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.21.9" />
           <element id="library" level="project" name="Maven: org.modelmapper:modelmapper:3.1.1" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2" />
