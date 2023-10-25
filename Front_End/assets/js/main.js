@@ -85,7 +85,7 @@ function addAdmin() {
     // var email = $("#email").val();
     // var username = $("#username").val();
     // var password = $("#password").val();
-    // var idCardNumber = $("#idCardNumber").val();
+    // var idCardNumber = $("#licenceNo").val();
     // var nicNumber = $("#nicNumber").val();
     // var address = $("#address").val();
     // var number = $("#phoneNumber").val();
@@ -124,6 +124,66 @@ function addAdmin() {
 
     var customer = {
         "customerId": $("#attendId").val(),
+        "name": $("#attendName").val(),
+        "address":$("#address").val(),
+        "contactNo":$("#phoneNumber").val(),
+        "email":$("#email").val(),
+        "nicNo":$("#nicNumber").val(),
+        "licenceNo":$("#licenceNo").val(),
+        "userName": $("#username").val(),
+        "password":$("#password").val()
+
+
+        }
+
+        $.ajax({
+
+            url: mainUrl+roal,
+            method: "post",
+            contentType: "application/json",
+            data: JSON.stringify(customer),
+            success: function (resp){
+                customerImg(id);
+            },
+            error:function ()
+            {}
+
+        });
+
+
+    function customerImg(id){
+        var fileObjectNic1 = $("#idCardPhotoFront")[0].file[0];
+        var fileNameNic1 = id + "-nicfront-" + $("#idCardPhotoFront")[0].file[0].name
+
+        var fileObjectNic2 = $('#idCardPhotoBack')[0].files[0];
+        var fileNameNic2 = id + "-nicback-" + $('#idCardPhotoBack')[0].files[0].name;
+
+        var fileObjectLicence = $('#licencePhoto')[0].files[0];
+        var fileNameLicence = id + "-licence-" + $('#licencePhoto')[0].files[0].name;
+
+
+        var data = new FormData();
+        data.append("nicf", fileObjectNic1, fileNameNic1);
+        data.append("nicb", fileObjectNic2, fileNameNic2);
+        data.append("licenceImg", fileObjectLicence, fileNameLicence);
+
+        $.ajax({
+
+           url:mainUrl+customer+"/"+id,
+            method:"put",
+            async:true,
+            contentType:false,
+            processData: false,
+            data:data,
+            success:function (res){
+
+            },
+            error:function (ob) {
+
+            }
+
+        });
+    }
 
     }
 });
