@@ -46,7 +46,7 @@ $("#btnReg").click(function (){
 
 
     }else if (selectedRole=="Customer"){
-        roal="customer";
+       roal="customer/up/";
         addCustomer();
         // var details={
         //     "adminId": id,
@@ -169,7 +169,7 @@ function addAdmin() {
 
         $.ajax({
 
-           url:mainUrl+customer+"/"+id,
+           url:mainUrl+roal+id,
             method:"put",
             async:true,
             contentType:false,
