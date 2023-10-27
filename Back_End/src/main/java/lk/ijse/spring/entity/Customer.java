@@ -28,12 +28,13 @@ public class Customer {
     private int contactNo;
     private String email;
     private String nicNo;
-    private String nicFrontImage;
-    private String nicBackImage;
     private String licenceNo;
-    private String licenceImage;
     private String userName;
     private String password;
+    private String nicFrontImage;
+    private String nicBackImage;
+    private String licenceImage;
+
     //private String status;
 
 
