@@ -25,7 +25,6 @@ public class AdminController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveAdmin(@RequestBody AdminDTO dto){
         service.saveAdmin(dto);
-        System.out.println(dto);
         return new ResponseUtil("200","Admin added",dto);
     }
 }
