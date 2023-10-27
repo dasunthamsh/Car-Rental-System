@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 @RestController
 @RequestMapping("/customer")
@@ -21,37 +22,31 @@ public class CustomerController {
     @Autowired
     CustomerService service;
 
+    @PostMapping(path = "/saveImg", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE})
+    public ResponseUtil saveImage(CustomerDTO dto, @RequestPart("imgFrontFile") MultipartFile file1, @RequestPart("imgBackFile") MultipartFile file2, @RequestPart("imgLicenceFile") MultipartFile file3) {
 
-    @PostMapping
-    public ResponseUtil saveCustomer(@RequestBody CustomerDTO dto){
-        service.saveCustomer(dto);
-        return  new ResponseUtil("200","saved",dto);
-    }
-
-    @PutMapping(path = "/up/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil uploadImagesAndPath(@RequestPart("nicf") MultipartFile nicf, @RequestPart("nicb") MultipartFile nicb, @RequestPart("licenceImg") MultipartFile licenceImg, @PathVariable String id) {
 
         try {
-            String projectPath = String.valueOf(new File("D:\\Project Zone\\IJSE\\Car-Rental-System\\Front_End\\assets\\img"));
-            File uploadsDir = new File(projectPath + "\\Customers");
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
             uploadsDir.mkdir();
-            nicf.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + nicf.getOriginalFilename()));
-            nicb.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + nicb.getOriginalFilename()));
-            licenceImg.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + licenceImg.getOriginalFilename()));
+            file1.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + file1.getOriginalFilename()));
+            file2.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + file2.getOriginalFilename()));
+            file3.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + file3.getOriginalFilename()));
 
-            String nicfPath = projectPath + "\\Customers\\" + nicf.getOriginalFilename();
-            String nicbPath = projectPath + "\\Customers\\" + nicb.getOriginalFilename();
-            String licenceImgPath = projectPath + "\\Customers\\" + licenceImg.getOriginalFilename();
+            dto.setNicFrontImage("uploads/" + file1.getOriginalFilename());
+            dto.setNicBackImage("uploads/" + file2.getOriginalFilename());
+            dto.setLicenceImage("uploads/" + file3.getOriginalFilename());
+            service.saveCustomer(dto);
 
-            service.uploadCustomerImage(nicfPath, nicbPath, licenceImgPath, id);
-
-
-            return new ResponseUtil("200","Uploaded",null);
-
-        }catch (IOException e){
-            return new ResponseUtil("500","error",null);
+        }catch (IOException | URISyntaxException e){
+            return new ResponseUtil("Ok", "Successfully Saved", null);
 
         }
+        return new ResponseUtil("Ok", "Successfully Saved", null);
+
     }
-}
+
+
+    }
 /////////

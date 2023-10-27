@@ -31,12 +31,5 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
-    @Override
-    public void uploadCustomerImage(String nicfPath, String nicbPath, String licenceImgPath, String id) {
-        if(repo.existsById(id)){
-            repo.updateCustomerFilePaths(nicfPath, nicbPath, licenceImgPath, id);
-        }else {
-            throw new RuntimeException("Customer Not Found");
-        }
-    }
+
 }

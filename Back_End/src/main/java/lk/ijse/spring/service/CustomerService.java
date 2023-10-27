@@ -8,5 +8,4 @@ public interface CustomerService {
 
     void saveCustomer(CustomerDTO dto);
 
-    void uploadCustomerImage(String nicfPath, String nicbPath, String licenceImgPath, String id);
 }

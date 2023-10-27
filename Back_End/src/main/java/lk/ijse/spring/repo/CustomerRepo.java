@@ -11,9 +11,5 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface CustomerRepo extends JpaRepository<Customer , String> {
 
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE Customer SET nicFrontImg=:nicFrontImg,nicBackImg=:nicBackImg,licenceImg=:licenceImg WHERE customerId=:customerId", nativeQuery = true)
-    void updateCustomerFilePaths(@Param("nicFrontImg") String nicFrontImg, @Param("nicBackImg") String nicBackImg, @Param("licenceImg") String licenceImg, @Param("customerId") String customerId);
 
 }
