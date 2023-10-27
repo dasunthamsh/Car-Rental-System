@@ -29,20 +29,18 @@ public class Car {
     private String transmissionType;
     private String fuelType;
     private String color;
+    private double dailyRate;
+    private double monthlyRate;
+    private double lossDamageWaiver;
+    private double priceForExtraKm;
+    private double freeMileage;
+    private String status;
 
     private String frontViewImage;
     private String backView;
     private String sideView;
     private String internalView;
 
-    private double dailyRate;
-    private double monthlyRate;
-    private  double freeKmForPrice;
-    private double freeKmForDuration;
-    private double lossDamageWaiver;
-    private double priceForExtraKm;
-    private double completeKm;
-    private String status;
 
     @OneToMany(mappedBy = "car" , cascade = CascadeType.ALL)
     private List<Rent> rents = new ArrayList<>();
