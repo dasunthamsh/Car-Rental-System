@@ -30,6 +30,7 @@ public class Driver {
     private String nicNo;
     private String username;
     private String password;
+    private String email;
     private String availability;
 
     @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)

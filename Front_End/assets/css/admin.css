@@ -55,6 +55,16 @@ header>nav>div>ul{
 
 
                                     /*driver details*/
+#driverForm{
+    position: relative;
+    top: 100px;
+}
+
+#driverTable{
+    position: relative;
+    top: 200px;
+}
+
                                     /*payment*/
                                     /*rent request*/
 
@@ -65,7 +75,7 @@ main>section:nth-child(1){
                                     /*add vehicle*/
 #vehicleForm{
     position: relative;
-    top: 150px;
+    top: 100px;
 }
 
 #buttonsVehi{

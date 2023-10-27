@@ -29,7 +29,7 @@
                     <a class="nav-link" href="customerdetails.html">CUSTOMER DETAILS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: #0055ff">DRIVER DETAILS</a>
+                    <a class="nav-link" href="#" style="color: #0055ff">MANAGE DRIVER</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="payment.html">INCOME</a>
@@ -43,12 +43,86 @@
 <main>
 
     <section>
+       <div class="container">
+        <form id="driverForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="nicNumber" class="fw-bold">NIC Number</label>
+                        <input type="text" class="form-control" id="nicNumber" name="nicNUmber" placeholder="Enter your NIC number" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="licenceNo" class="fw-bold">licence Card Number</label>
+                        <input type="text" class= "form-control" id="licenceNo" name="licenceNo" placeholder="Enter your ID card number" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="attendName" class="fw-bold">Your Name</label>
+                        <input type="text" class="form-control" id="attendName" name="attendName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="address" class="fw-bold">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Driver Availability" readonly>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="address" class="fw-bold">Availability</label>
+                        <input type="text" class="form-control" id="DriverAvailability" name="address" placeholder="Enter your address" required>
+                    </div>
+                </div>
+                <div class="col-md-5" >
 
+                    <div id="disableForDriver">
+                        <div class="form-group mb-3">
+                            <label for="phoneNumber" class="fw-bold">Phone Number</label>
+                            <input type="tel" class="form-control" id="phoneNumber" name="number" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email" class="fw-bold">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="username" class="fw-bold">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Choose a username" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password" class="fw-bold">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Choose a password" required>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary fw-bold" id="driverSave">Register</button>
+            <button type="button" class="btn btn-primary fw-bold" id="driverDelete">Register</button>
+            <button type="button" class="btn btn-primary fw-bold" id="driverUpdate">Register</button>
+        </form>
+       </div>
+    </section>
+
+    <section id="driverTable">
+        <div class="container">
+            <h3>Driver Schedule</h3><br>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Rent ID</th>
+                    <th>Car ID</th>
+                    <th>Driver ID</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
     </section>
 
 </main>
 
 
 <footer></footer>
+<script src="../bootstrap/js/jquery-3.6.1.min.js"></script>
+<script src="../controller/admin.js"></script>
 </body>
 </html>
