@@ -1,5 +1,4 @@
 
-let baseUrl = "http://localhost:8080/rent/";
 
 $("#saveCar").click(function (){
 
@@ -68,3 +67,5 @@ $("#saveCar").click(function (){
         }
     });
 })
+
+

@@ -61,11 +61,11 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="address" class="fw-bold">Address</label>
-                        <input type="text" class="form-control" id="address" name="address" placeholder="Driver Availability" readonly>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Driver Availability" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="address" class="fw-bold">Availability</label>
-                        <input type="text" class="form-control" id="DriverAvailability" name="address" placeholder="Enter your address" required>
+                        <input type="text" class="form-control" id="DriverAvailability" name="address" placeholder="Enter your address" readonly >
                     </div>
                 </div>
                 <div class="col-md-5" >
@@ -92,9 +92,9 @@
 
                 </div>
             </div>
-            <button type="button" class="btn btn-primary fw-bold" id="driverSave">Register</button>
-            <button type="button" class="btn btn-primary fw-bold" id="driverDelete">Register</button>
-            <button type="button" class="btn btn-primary fw-bold" id="driverUpdate">Register</button>
+            <button type="button" class="btn btn-primary fw-bold" id="driverSave">Save</button>
+            <button type="button" class="btn btn-primary fw-bold" id="driverDelete">Delete</button>
+            <button type="button" class="btn btn-primary fw-bold" id="driverUpdate">Update</button>
         </form>
        </div>
     </section>
@@ -123,6 +123,9 @@
 
 <footer></footer>
 <script src="../bootstrap/js/jquery-3.6.1.min.js"></script>
-<script src="../controller/admin.js"></script>
+<script src="../controller/url.js"></script>
+<script src="../controller/driver.js"></script>
+
+
 </body>
 </html>
