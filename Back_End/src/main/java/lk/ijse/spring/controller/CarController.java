@@ -3,6 +3,7 @@ package lk.ijse.spring.controller;/*
 */
 
 import lk.ijse.spring.dto.CarDTO;
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.service.CarService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -48,5 +50,12 @@ public class CarController {
             return new ResponseUtil("Ok", "Successfully Saved", carDTO);
         }
         return new ResponseUtil("Ok", "Successfully Saved", carDTO);
+    }
+
+    @GetMapping
+    public ResponseUtil getAllCars(){
+        List<CarDTO> allCar = service.getAllCars();
+        return new ResponseUtil("OK","Successfull",allCar);
+
     }
 }
