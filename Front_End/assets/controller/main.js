@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 
 
-const mainUrl = "http://localhost:8080/rent/";
+//const mainUrl = "http://localhost:8080/rent/";
 
 var roal = undefined;
 
@@ -57,7 +57,7 @@ function addAdmin() {
 
 
     $.ajax({
-        url: mainUrl + "admin",
+        url: baseUrl + "admin",
         method: "post",
         contentType: "application/json",
         data: JSON.stringify(admin),
@@ -115,7 +115,7 @@ function addAdmin() {
 
 
             $.ajax({
-                url:mainUrl+"customer/saveImg",
+                url:baseUrl+"customer/saveImg",
                 method: "post",
                 data: formData,
                 dataType: "json",
@@ -134,4 +134,16 @@ function addAdmin() {
 
 
     }
+
+});
+
+//      pop window and close window
+
+$('#btnPopUp').click(function (){
+    $('.registrationModal').css("display","block");
+});
+
+$("#closePop").click(function (){
+    $('.registrationModal').css("display","none");
+
 });
