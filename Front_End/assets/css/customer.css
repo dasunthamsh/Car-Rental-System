@@ -276,17 +276,52 @@ main>section:nth-child(4)>div:nth-child(2) {
 
 
 
+/*pop up screen*/
+
+.registrationModal{
+    max-width: 1100px;
+    margin: auto;
+    display: none;
+    position: absolute;
+    top: 50vh;
+    z-index: 1;
+    background: #ffffff;
+    left: 0;
+    right: 0;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+
+#innerDiv{
+    max-width: 1000px;
+    background: #ffffff;
+
+
+}
+
+.popUpImg{
+
+    width: 250px;
+    height: 200px;
+    align-items: center;
+    display: flex;
+}
+
+.popImgContainer{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
 
 
 
 
+/*footer*/
 
-
-
-
-
-
-
+footer{
+    position: relative;
+    top: 170vh;
+}
 
 
 
