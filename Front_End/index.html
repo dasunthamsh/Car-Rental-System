@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>easy Rental</title>
+    <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 
     <meta content="Easy Car Rental, Car rental,Vehicle Rental" name="keywords">
@@ -189,7 +190,9 @@
                                 </aside>
                                 <aside>
                                     <div>
-                                        <img src="assets/img/white.png" width="50">
+                                        <button id="btnPopUp" class="border-light rounded-circle shadow-none">
+                                            <img src="assets/img/white.png" width="50">
+                                        </button>
                                     </div>
                                     <h6>l</h6>
                                     <h6>l</h6>
@@ -219,6 +222,108 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+
+
+                                <!--            pop up form -->
+
+            <div class="registrationModal" >
+                <div id="innerDiv" class="container">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Rent Vehicle</h4>
+                                <button type="button" class="close"  id="closePop" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal Body - Images and Form -->
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row popImgContainer mt-5">
+                                        <div class="col-md-4 popUpImg">
+                                            <img src="assets/img/ddd.png" class="img-fluid" alt="Image 1">
+                                        </div>
+                                        <div class="col-md-4 popUpImg">
+                                            <img src="image_url_2.jpg" class="img-fluid" alt="Image 2">
+                                        </div>
+                                        <div class="col-md-4 popUpImg">
+                                            <img src="image_url_3.jpg" class="img-fluid" alt="Image 3">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Form -->
+                                <form id="registrationForm" >
+                                <div class="row mt-5">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="dalyRate">Daily rate</label>
+                                            <input type="text" class="form-control" id="dalyRate" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="monthlyRate">Monthly rate</label>
+                                            <input type="text" class="form-control" id="monthlyRate" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="CarAvailability">Car Availability</label>
+                                            <input type="text" class="form-control" id="CarAvailability" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="customerId">CustomerId</label>
+                                            <input type="text" class="form-control" id="customerId" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="lossDamage">Loss Damage</label>
+                                            <input type="text" class="form-control" id="lossDamage" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="status">status</label>
+                                            <input type="text" class="form-control" id="status" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ReturnDate">Return Date</label>
+                                            <input type="date" class="form-control" id="ReturnDate" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="picUpTime">PicUp Time</label>
+                                            <input type="date" class="form-control" id="picUpTime" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="priceForExtraKm">price For Extra Km</label>
+                                            <input type="text" class="form-control" id="priceForExtraKm" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="freeMileage">free Mileage </label>
+                                            <input type="text" class="form-control" id="freeMileage" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="returnPlace">Return Place</label>
+                                            <input type="text" class="form-control" id="returnPlace" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="picUpPlace">picUp Place</label>
+                                            <input type="text" class="form-control" id="picUpPlace" required>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary mt-5 col-md-2">Submit</button>
+                                </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </section>
 
                                                 <!--register -->
@@ -309,6 +414,8 @@
 
         </section>
 
+
+
     </main>
 
     <footer>
@@ -326,6 +433,8 @@
 
     <script src="assets/bootstrap/js/jquery-3.6.1.min.js"></script>
     <script src="assets/controller/main.js"></script>
+    <script src="assets/controller/url.js"></script>
+
 
 </body>
 </html>
