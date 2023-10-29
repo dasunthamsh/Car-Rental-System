@@ -283,14 +283,18 @@ main>section:nth-child(4)>div:nth-child(2) {
     margin: auto;
     display: none;
     position: absolute;
-    top: 50vh;
-    z-index: 1;
+    top: 1vh;
+    z-index: 2;
     background: #ffffff;
     left: 0;
     right: 0;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 
 }
+.registrationModal:target{
+    display: block;
+}
+
 
 #innerDiv{
     max-width: 1000px;
