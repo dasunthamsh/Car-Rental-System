@@ -157,10 +157,14 @@ main>section:nth-child(2)>div:nth-child(2)>section>aside>div>h5 {
                             /* our vehicles */
 
 
+
+
+
 main>section:nth-child(3) {
     position: relative;
     top: 100vh;
-
+    height: 130vh;
+    overflow: hidden;
 }
 
 main>section:nth-child(3)>aside:nth-child(1) {
@@ -223,6 +227,7 @@ main>section:nth-child(3)>aside:nth-child(1) {
     font-size: 50px;
 }
 
+
                                         /*register*/
 
 
@@ -283,15 +288,22 @@ main>section:nth-child(4)>div:nth-child(2) {
     margin: auto;
     display: none;
     position: absolute;
-    top: 1vh;
+    top: 10vh;
     z-index: 2;
-    background: #ffffff;
+    background: transparent;
     left: 0;
     right: 0;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 
 }
-.registrationModal:target{
+
+.registrationModal:target {
+    display: block;
+}
+
+/* Styling when #btnPopUp is active */
+#btnPopUp:active {
+    /* Define your styles for an active state here */
     display: block;
 }
 
