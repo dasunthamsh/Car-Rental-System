@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/action.css">
     <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
 </head>
-<body >
+<body onload="loadCarsToDashboard()">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
@@ -137,81 +137,171 @@
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" class="bg-secondary" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" class="bg-secondary" aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <section class="ovrVehicleClass">
-                            <h1>Luxury</h1>
-                            <h2>Benz</h2>
-                        </section>
+                <div class="carousel-inner" id="viewImg">
+<!--                    <div class="carousel-item active">-->
+<!--                        <section class="ovrVehicleClass">-->
+<!--                            <h1>Luxury</h1>-->
+<!--                            <h2>Benz</h2>-->
+<!--                        </section>-->
 
-                        <img src="assets/img/ffff.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <div id="carDetails"  style="color: black">
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/seet.png" width="50">
-                                    </div>
-                                    <h6>dsd</h6>
-                                    <h6>dsd</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/speed.png" width="50">
-                                    </div>
-                                    <h6>dsd</h6>
-                                    <h6>dsd</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/fule.png" width="50">
-                                    </div>
-                                    <h6>dsd</h6>
-                                    <h6>dsd</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/color.png" width="50">
-                                    </div>
-                                    <h6>dsd</h6>
-                                    <h6>dsd</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/bumber.png" width="50">
-                                    </div>
-                                    <h6>dsd</h6>
-                                    <h6>dsd</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/type.png" width="50">
-                                    </div>
-                                    <h6>dsd</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <button id="btnPopUp" class="border-light rounded-circle shadow-none">
-                                            <img src="assets/img/white.png" width="50">
-                                        </button>
-                                    </div>
-                                    <h6>l</h6>
-                                    <h6>l</h6>
-                                </aside>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/ffff.png" class="d-block w-100" alt="..." id="ff">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/ffff.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                    </div>
+<!--                        <img src="assets/img/ffff.png" class="d-block w-100" alt="...">-->
+<!--                        <div class="carousel-caption d-none d-md-block">-->
+<!--                            <div id="carDetails"  style="color: black">-->
+<!--                                <aside>-->
+<!--                                    <div>-->
+<!--                                        <img src="assets/img/seet.png" width="50">-->
+<!--                                    </div>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                </aside>-->
+<!--                                <aside>-->
+<!--                                    <div>-->
+<!--                                        <img src="assets/img/speed.png" width="50">-->
+<!--                                    </div>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                </aside>-->
+<!--                                <aside>-->
+<!--                                    <div>-->
+<!--                                        <img src="assets/img/fule.png" width="50">-->
+<!--                                    </div>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                </aside>-->
+<!--                                <aside>-->
+<!--                                    <div>-->
+<!--                                        <img src="assets/img/color.png" width="50">-->
+<!--                                    </div>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                </aside>-->
+<!--                                <aside>-->
+<!--                                    <div>-->
+<!--                                        <img src="assets/img/bumber.png" width="50">-->
+<!--                                    </div>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                </aside>-->
+<!--                                <aside>-->
+<!--                                    <div>-->
+<!--                                        <img src="assets/img/type.png" width="50">-->
+<!--                                    </div>-->
+<!--                                    <h6>dsd</h6>-->
+<!--                                </aside>-->
+<!--                                <aside>-->
+<!--                                    <div>-->
+<!--                                        <button id="btnPopUp" class="border-light rounded-circle shadow-none">-->
+<!--                                            <img src="assets/img/white.png" width="50">-->
+<!--                                        </button>-->
+<!--                                    </div>-->
+<!--                                    <h6>l</h6>-->
+<!--                                    <h6>l</h6>-->
+<!--                                </aside>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+
+                    <!--            pop up form -->
+
+    <!--                    <div class="registrationModal" >-->
+    <!--                        <div id="innerDiv" class="container">-->
+    <!--                            <div class="modal-dialog">-->
+    <!--                                <div class="modal-content">-->
+
+    <!--                                    &lt;!&ndash; Modal Header &ndash;&gt;-->
+    <!--                                    <div class="modal-header">-->
+    <!--                                        <h4 class="modal-title">Rent Vehicle</h4>-->
+    <!--                                        <button type="button" class="close"  id="closePop" data-dismiss="modal">&times;</button>-->
+    <!--                                    </div>-->
+
+    <!--                                    &lt;!&ndash; Modal Body - Images and Form &ndash;&gt;-->
+    <!--                                    <div class="modal-body">-->
+    <!--                                        <div class="container">-->
+    <!--                                            <div class="row popImgContainer mt-5">-->
+    <!--                                                <div class="col-md-4 popUpImg">-->
+    <!--                                                    <img src="assets/img/ddd.png" class="img-fluid" alt="Image 1">-->
+    <!--                                                </div>-->
+    <!--                                                <div class="col-md-4 popUpImg">-->
+    <!--                                                    <img src="#" class="img-fluid" alt="Image 2">-->
+    <!--                                                </div>-->
+    <!--                                                <div class="col-md-4 popUpImg">-->
+    <!--                                                    <img src="#" class="img-fluid" alt="Image 3">-->
+    <!--                                                </div>-->
+    <!--                                            </div>-->
+    <!--                                        </div>-->
+
+    <!--                                        &lt;!&ndash; Form &ndash;&gt;-->
+    <!--                                        <form id="registrationForm" >-->
+    <!--                                            <div class="row mt-5">-->
+    <!--                                                <div class="col-md-4">-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="dalyRate">Daily rate</label>-->
+    <!--                                                        <input type="text" class="form-control" id="dalyRate" readonly>-->
+    <!--                                                    </div>-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="monthlyRate">Monthly rate</label>-->
+    <!--                                                        <input type="text" class="form-control" id="monthlyRate" readonly>-->
+    <!--                                                    </div>-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="CarAvailability">Car Availability</label>-->
+    <!--                                                        <input type="text" class="form-control" id="CarAvailability" readonly>-->
+    <!--                                                    </div>-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="customerId">CustomerId</label>-->
+    <!--                                                        <input type="text" class="form-control" id="customerId" required>-->
+    <!--                                                    </div>-->
+
+    <!--                                                </div>-->
+    <!--                                                <div class="col-md-4">-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="lossDamage">Loss Damage</label>-->
+    <!--                                                        <input type="text" class="form-control" id="lossDamage" readonly>-->
+    <!--                                                    </div>-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="status">status</label>-->
+    <!--                                                        <input type="text" class="form-control" id="status" readonly>-->
+    <!--                                                    </div>-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="ReturnDate">Return Date</label>-->
+    <!--                                                        <input type="date" class="form-control" id="ReturnDate" required>-->
+    <!--                                                    </div>-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="picUpTime">PicUp Time</label>-->
+    <!--                                                        <input type="date" class="form-control" id="picUpTime" required>-->
+    <!--                                                    </div>-->
+
+    <!--                                                </div>-->
+    <!--                                                <div class="col-md-4">-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="priceForExtraKm">price For Extra Km</label>-->
+    <!--                                                        <input type="text" class="form-control" id="priceForExtraKm" readonly>-->
+    <!--                                                    </div>-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="freeMileage">free Mileage </label>-->
+    <!--                                                        <input type="text" class="form-control" id="freeMileage" readonly>-->
+    <!--                                                    </div>-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="returnPlace">Return Place</label>-->
+    <!--                                                        <input type="text" class="form-control" id="returnPlace" required>-->
+    <!--                                                    </div>-->
+    <!--                                                    <div class="form-group">-->
+    <!--                                                        <label for="picUpPlace">picUp Place</label>-->
+    <!--                                                        <input type="text" class="form-control" id="picUpPlace" required>-->
+    <!--                                                    </div>-->
+    <!--                                                </div>-->
+
+    <!--                                                <button type="submit" class="btn btn-primary mt-5 col-md-2">Submit</button>-->
+    <!--                                            </div>-->
+    <!--                                        </form>-->
+    <!--                                    </div>-->
+
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+
                 </div>
                 <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
@@ -224,104 +314,6 @@
             </div>
 
 
-                                <!--            pop up form -->
-
-            <div class="registrationModal" >
-                <div id="innerDiv" class="container">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Rent Vehicle</h4>
-                                <button type="button" class="close"  id="closePop" data-dismiss="modal">&times;</button>
-                            </div>
-
-                            <!-- Modal Body - Images and Form -->
-                            <div class="modal-body">
-                                <div class="container">
-                                    <div class="row popImgContainer mt-5">
-                                        <div class="col-md-4 popUpImg">
-                                            <img src="assets/img/ddd.png" class="img-fluid" alt="Image 1">
-                                        </div>
-                                        <div class="col-md-4 popUpImg">
-                                            <img src="image_url_2.jpg" class="img-fluid" alt="Image 2">
-                                        </div>
-                                        <div class="col-md-4 popUpImg">
-                                            <img src="image_url_3.jpg" class="img-fluid" alt="Image 3">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Form -->
-                                <form id="registrationForm" >
-                                <div class="row mt-5">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="dalyRate">Daily rate</label>
-                                            <input type="text" class="form-control" id="dalyRate" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="monthlyRate">Monthly rate</label>
-                                            <input type="text" class="form-control" id="monthlyRate" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="CarAvailability">Car Availability</label>
-                                            <input type="text" class="form-control" id="CarAvailability" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="customerId">CustomerId</label>
-                                            <input type="text" class="form-control" id="customerId" required>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="lossDamage">Loss Damage</label>
-                                            <input type="text" class="form-control" id="lossDamage" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="status">status</label>
-                                            <input type="text" class="form-control" id="status" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ReturnDate">Return Date</label>
-                                            <input type="date" class="form-control" id="ReturnDate" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="picUpTime">PicUp Time</label>
-                                            <input type="date" class="form-control" id="picUpTime" required>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="priceForExtraKm">price For Extra Km</label>
-                                            <input type="text" class="form-control" id="priceForExtraKm" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="freeMileage">free Mileage </label>
-                                            <input type="text" class="form-control" id="freeMileage" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="returnPlace">Return Place</label>
-                                            <input type="text" class="form-control" id="returnPlace" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="picUpPlace">picUp Place</label>
-                                            <input type="text" class="form-control" id="picUpPlace" required>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary mt-5 col-md-2">Submit</button>
-                                </div>
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
         </section>
