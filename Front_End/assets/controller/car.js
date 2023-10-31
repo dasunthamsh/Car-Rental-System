@@ -18,6 +18,7 @@ $("#saveCar").click(function (){
     let priceForExtraKm = $("#priceForExtraKM").val();
     let freeMileage = $("#freeMileage").val();
     let status = "Available";
+    let lable = $("#lablew").text();
 
     formData.append("registrationNO", registrationNO);
     formData.append("brand", brand);
@@ -32,6 +33,7 @@ $("#saveCar").click(function (){
     formData.append("priceForExtraKm", priceForExtraKm);
     formData.append("freeMileage", freeMileage);
     formData.append("status", status);
+    formData.append("lable", lable);
 
 
     let imgFront = $("#frontView")[0].files[0];
