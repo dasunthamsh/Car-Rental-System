@@ -86,9 +86,7 @@ function addAdmin() {
         var nicNo = $("#nicNumber").val();
         var address = $("#address").val();
         var contactNo = $("#phoneNumber").val();
-        // var idFrontPhoto = $("#idCardPhotoFront").val();
-        // var idCardBackPhoto = $("#idCardPhotoBack").val();
-        // var idPhoto = $("#nicPhoto").val();
+
 
         formData.append("customerId", customerId);
         formData.append("name", name);
@@ -167,7 +165,6 @@ loadCarsToDashboard=()=> {
                 var backView = i.backView;
                 var sideView = i.sideView;
                 var internalView = i.internalView;
-                var status = i.status;
 
                 console.log(i);
 
@@ -177,7 +174,7 @@ loadCarsToDashboard=()=> {
                             <h2>${brand}</h2>
                         </section>
 
-                        <img src="${(resp.status === 200) ? (baseUrl + frontViewImage) : ('assets/img/' + frontViewImage)}" class="d-block w-100" alt="...">
+                        <img src="${'assets/img/' + frontViewImage}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <div id="carDetails"  style="color: black">
                                 <aside>
@@ -208,7 +205,7 @@ loadCarsToDashboard=()=> {
                                     <div>
                                         <img src="assets/img/bumber.png" width="50">
                                     </div>
-                                    <h6>${registrationNO}</h6>
+                                    <h6 id="regNumberH6">${registrationNO}</h6>
                                 </aside>
                                 <aside>
                                     <div>
@@ -222,7 +219,7 @@ loadCarsToDashboard=()=> {
                                             <img src="assets/img/white.png" width="50">                                            
                                       </button>
                                     </div>
-                                    <h6>l</h6>
+                                    <h6>Rent</h6>
                                 </aside>
                             </div>
                         </div>
@@ -238,6 +235,7 @@ loadCarsToDashboard=()=> {
 
                                     <!-- Modal Header -->
                                     <div class="modal-header">
+                                        <h6 id="rentId">R2635</h6>
                                         <h4 class="modal-title">Rent Vehicle</h4>
                                         <a class="close" id="closeWindow" href="#">&times;</a>
 
@@ -248,13 +246,13 @@ loadCarsToDashboard=()=> {
                                         <div class="container">
                                             <div class="row popImgContainer mt-5">
                                                 <div class="col-md-4 popUpImg">
-                                                    <img src="" class="img-fluid" alt="Image 1">
+                                                    <img src="${'assets/img/' +internalView }" class="img-fluid" alt="Image 1">
                                                 </div>
                                                 <div class="col-md-4 popUpImg">
-                                                    <img src="#" class="img-fluid" alt="Image 2">
+                                                    <img src="${'assets/img/' +backView }" class="img-fluid" alt="Image 2">
                                                 </div>
                                                 <div class="col-md-4 popUpImg">
-                                                    <img src="#" class="img-fluid" alt="Image 3">
+                                                    <img src="${'assets/img/' + sideView}" class="img-fluid" alt="Image 3">
                                                 </div>
                                             </div>
                                         </div>
@@ -264,62 +262,62 @@ loadCarsToDashboard=()=> {
                                             <div class="row mt-5">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label for="dalyRate">${noOfPassengers}</label>
-                                                        <input type="text" class="form-control" id="dalyRate" value="${noOfPassengers}" readonly>
+                                                        <label class="fw-bold" for="dalyRate">Daly Rate</label>
+                                                        <input type="text" class="form-control" id="dalyRate" value="${dailyRate}" readonly>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="monthlyRate">Monthly rate</label>
-                                                        <input type="text" class="form-control" id="monthlyRate" readonly>
+                                                        <label class="fw-bold" for="monthlyRate">Monthly rate</label>
+                                                        <input type="text" class="form-control" id="monthlyRate" value="${monthlyRate}" readonly>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="CarAvailability">Car Availability</label>
-                                                        <input type="text" class="form-control" id="CarAvailability" readonly>
+                                                        <label class="fw-bold" for="bankSlip">Bank Slip</label>
+                                                        <input type="file" class="form-control" id="bankSlip" name="bankSlip" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="customerId">CustomerId</label>
-                                                        <input type="text" class="form-control" id="customerId" required>
+                                                        <label class="fw-bold" for="customerId">CustomerId</label>
+                                                        <input type="text" class="form-control" id="customerId"  required>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label for="lossDamage">Loss Damage</label>
-                                                        <input type="text" class="form-control" id="lossDamage" readonly>
+                                                        <label class="fw-bold" for="lossDamage">Loss Damage</label>
+                                                        <input type="text" class="form-control" id="lossDamage" value="${lossDamageWaiver}" readonly>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="status">status</label>
-                                                        <input type="text" class="form-control" id="status" readonly>
+                                                        <label class="fw-bold" for="status">status</label>
+                                                        <input type="text" class="form-control" id="status" value="${dailyRate}" readonly>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="ReturnDate">Return Date</label>
-                                                        <input type="date" class="form-control" id="ReturnDate" required>
+                                                        <label class="fw-bold" for="ReturnDate">Return Date</label>
+                                                        <input type="date" class="form-control" id="ReturnDate" name="returnDate" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="picUpTime">PicUp Time</label>
-                                                        <input type="date" class="form-control" id="picUpTime" required>
+                                                        <label class="fw-bold" for="picUpTime">PicUp Time</label>
+                                                        <input type="date" class="form-control" id="picUpTime"  name="pickUpTime"required>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label for="priceForExtraKm">price For Extra Km</label>
-                                                        <input type="text" class="form-control" id="priceForExtraKm" readonly>
+                                                        <label class="fw-bold" for="priceForExtraKm">price For Extra Km</label>
+                                                        <input type="text" class="form-control" id="priceForExtraKm" value="${priceForExtraKm}" readonly>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="freeMileage">free Mileage </label>
-                                                        <input type="text" class="form-control" id="freeMileage" readonly>
+                                                        <label class="fw-bold" for="freeMileage">free Mileage </label>
+                                                        <input type="text" class="form-control" id="freeMileage" value="${freeMileage}" readonly>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="returnPlace">Return Place</label>
-                                                        <input type="text" class="form-control" id="returnPlace" required>
+                                                        <label class="fw-bold" for="returnPlace">Return Place</label>
+                                                        <input type="text" class="form-control" id="returnPlace" name="returnPlace" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="picUpPlace">picUp Place</label>
-                                                        <input type="text" class="form-control" id="picUpPlace" required>
+                                                        <label class="fw-bold" for="picUpPlace">picUp Place</label>
+                                                        <input type="text" class="form-control" id="picUpPlace" name="picUpPlack" required>
                                                     </div>
                                                 </div>
 
-                                                <button type="submit" class="btn btn-primary mt-5 col-md-2">Submit</button>
+                                                <button type="button" id="btnCarRent" class="btn btn-primary mt-5 col-md-2">Rent Car</button>
                                             </div>
                                         </form>
                                     </div>
@@ -349,14 +347,120 @@ loadCarsToDashboard=()=> {
                     });
                 });
 
-            }
+                var currentDate = new Date();
+                var localDate = currentDate.toLocaleDateString(); // Get local date as a string
+
+//  booking a car
 
 
+
+
+
+
+
+                $("#viewImg").on("click", "#btnCarRent", function() {
+
+                    var rentFormDate = new FormData();
+
+                    let pickupDate = $("#picUpTime").val();
+                     let returnDate = $("#ReturnDate").val();
+                     let pickUpVenue = $("#picUpPlace").val();
+                     let returnVenue = $("#returnPlace").val();
+                     let customerId = $("#customerId").val();
+                    let rentId = $("#viewImg").find("#rentId").text();
+                    let date = localDate;
+                    let status = "Pending";   // catch request
+                    let registrationNO = $("#viewImg").find("#regNumberH6").text();
+
+
+                    rentFormDate.append("rentId", rentId);
+                    rentFormDate.append("date", date);
+                    rentFormDate.append("pickupDate", pickupDate);
+                    rentFormDate.append("returnDate", returnDate);
+                    rentFormDate.append("pickUpVenue", pickUpVenue);
+                    rentFormDate.append("returnVenue", returnVenue);
+                    rentFormDate.append("status", status);
+                    rentFormDate.append("registrationNO", registrationNO);
+                    rentFormDate.append("customerId", customerId);
+
+
+                    //  let imgFront = $("#frontView")[0].files[0];
+                    //  let imgFrontName = $("#frontView")[0].files[0].name;
+                    // rentFormDate.append("imgBankSlip", imgFront, imgFrontName);
+
+
+                    $.ajax({
+                        url:baseUrl+"addRent",
+                        method:"post",
+                        data: rentFormDate,
+                        dataType: "json",
+                        async: true,
+                        contentType: false,
+                        processData: false,
+                        enctype: "multipart/form-data",
+                        success:function (resp) {
+                            alert("successful Uploaded");
+                        },
+                        error:function (err){
+                            console.log(err);
+                        }
+
+                    });
+                });
+
+                }
         }
     });
 
 }
+
+
+
+//     $(document).on("click","#btnCarRent",function (){
+//     var rentFormDate = new FormData();
+//     var rentId = document.getElementById("rentId").textContent;
+//     var date = localDate;
+//     var pickupDate = document.getElementById("picUpTime").value;
+//     var returnDate = document.getElementById("ReturnDate").value;
+//     var pickUpVenue = document.getElementById("picUpPlace").value;
+//     var returnVenue = document.getElementById("returnPlace").value;
+//     var status = "Pending"; // catch request
+//     var registrationNO = document.getElementById("regNumberH6").textContent;
+//     var customerId = document.getElementById("customerId").value;
 //
-// $('#btnPopUp, #closePop').click(function() {
-//     $('.registrationModal').toggle();
+//     rentFormDate.append("rentId", rentId);
+//     rentFormDate.append("date", date);
+//     rentFormDate.append("pickupDate", pickupDate);
+//     rentFormDate.append("returnDate", returnDate);
+//     rentFormDate.append("pickUpVenue", pickUpVenue);
+//     rentFormDate.append("returnVenue", returnVenue);
+//     rentFormDate.append("status", status);
+//     rentFormDate.append("registrationNO", registrationNO);
+//     rentFormDate.append("customerId", customerId);
+//
+//         var imgFront = document.getElementById("bankSlip");
+//         if (imgFront.files.length > 0) {
+//             var imgFrontFile = imgFront.files[0];
+//             var imgFrontName = imgFront.files[0].name;
+//             rentFormDate.append("imgBankSlip", imgFrontFile, imgFrontName);
+//         } else {
+//             console.error("No file selected");
+//             return;
+//         }
+//
+//
+//         var xhr = new XMLHttpRequest();
+//     xhr.open("POST", baseUrl + "addRent/addBooking");
+//     xhr.send(rentFormDate);
+//     xhr.onload = function () {
+//         if (xhr.status === 200) {
+//             alert("Successfully Uploaded");
+//         } else {
+//             console.error(xhr.responseText);
+//         }
+//     };
+//     xhr.onerror = function () {
+//         console.error(xhr.statusText);
+//     };
 // });
+//
