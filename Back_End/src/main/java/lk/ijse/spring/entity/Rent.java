@@ -26,7 +26,7 @@ public class Rent {
     private String returnDate;
     private String pickUpVenue;
     private String returnVenue;
-    private String lossDamageWaiver;
+    //private String lossDamageWaiver;
     private String bankSlip;
     private String status;
 
