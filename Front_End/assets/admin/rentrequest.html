@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <script src="../bootstrap/js/bootstrap.bundle.js"></script>
 </head>
-<body>
+<body onload="loadRentRequest()">
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -70,7 +70,7 @@
 
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary fw-bold" id="driverSave">Accept</button>
+                <button type="button" class="btn btn-primary fw-bold" id="acceptRentRequest">Accept</button>
                 <button type="button" class="btn btn-primary fw-bold" id="driverDelete">Reject</button>
                 <button type="button" class="btn btn-primary fw-bold" id="driverUpdate">Return</button>
             </form>
@@ -85,42 +85,15 @@
                 <tr>
                     <th>Rent ID</th>
                     <th>Car ID</th>
-                    <th>User ID</th>
+                    <th>Customer ID</th>
                     <th>Driver ID</th>
-                    <th>Driver Se</th>
-                    <th>Rent Request</th>
                     <th>Pick Date</th>
-                    <th>Pick Time</th>
+                    <th>Pick Place</th>
                     <th>Return Time</th>
                     <th>Return Date</th>
-                    <th>Location</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1001</td>
-                    <td>2001</td>
-                    <td>Yes</td>
-                    <td>One Week</td>
-                    <td>2023-10-25</td>
-                    <td>09:00 AM</td>
-                    <td>2023-11-01</td>
-                    <td>2023-11-01</td>
-                    <td>New York</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>1002</td>
-                    <td>2002</td>
-                    <td>No</td>
-                    <td>Two Days</td>
-                    <td>2023-10-26</td>
-                    <td>02:30 PM</td>
-                    <td>2023-10-28</td>
-                    <td>2023-10-28</td>
-                    <td>Los Angeles</td>
-                </tr>
+                <tbody id="rentRequestTableBody">
                 <!-- Add more rows as needed -->
                 </tbody>
             </table>
@@ -134,6 +107,8 @@
 <script src="../bootstrap/js/jquery-3.6.1.min.js"></script>
 <script src="../controller/car.js"></script>
 <script src="../controller/url.js"></script>
+<script src="../controller/rentRequest.js"></script>
+
 
 </body>
 </html>
