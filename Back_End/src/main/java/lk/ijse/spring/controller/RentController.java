@@ -27,9 +27,10 @@ public class RentController {
     RentService service;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveBooking(@ModelAttribute RentDTO dto){
+    @PostMapping()
+    public ResponseUtil saveBooking(@RequestBody RentDTO dto){
         service.bookingCar(dto);
+        System.out.println(dto);
         return new ResponseUtil("200","Admin added",dto);
     }
 
