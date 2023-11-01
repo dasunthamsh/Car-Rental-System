@@ -17,6 +17,7 @@ import javax.xml.crypto.URIReferenceException;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/addRent")
@@ -53,4 +54,9 @@ public class RentController {
 //        return new ResponseUtil("Ok", "Successfully Saved", dto);
 //
 //    }
+    @GetMapping
+    public ResponseUtil getAllRentRequest(){
+        List<RentDTO> allRentRequest = service.rentRequest();
+        return new ResponseUtil("Ok","ok",allRentRequest);
+    }
 }
