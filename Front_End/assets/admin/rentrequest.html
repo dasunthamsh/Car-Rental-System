@@ -44,6 +44,41 @@
 
     <section>
         <div class="container">
+            <form id="driverForm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group mb-3">
+                            <label for="driver" class="fw-bold">Driver</label>
+                            <input type="text" class="form-control" id="driver" name="driver" placeholder="Enter your address" required >
+                        </div>
+                    </div>
+                    <div class="col-md-4" >
+                        <div>
+                            <div class="form-group mb-3">
+                                <label for="customer" class="fw-bold">Customer Id</label>
+                                <input type="password" class="form-control" id="customer" name="customer" placeholder="Choose a password" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" >
+                        <div>
+                            <div class="form-group mb-3">
+                                <label for="rentId" class="fw-bold">Rent Id</label>
+                                <input type="tel" class="form-control" id="rentId" name="rentId" placeholder="Enter your phone number" required>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary fw-bold" id="driverSave">Accept</button>
+                <button type="button" class="btn btn-primary fw-bold" id="driverDelete">Reject</button>
+                <button type="button" class="btn btn-primary fw-bold" id="driverUpdate">Return</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="rentRequestTable">
+        <div class="container">
             <h2>Rent Information</h2>
             <table class="table table-bordered">
                 <thead>
@@ -98,5 +133,7 @@
 <footer></footer>
 <script src="../bootstrap/js/jquery-3.6.1.min.js"></script>
 <script src="../controller/car.js"></script>
+<script src="../controller/url.js"></script>
+
 </body>
 </html>
