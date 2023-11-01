@@ -72,6 +72,11 @@ main>section:nth-child(1){
     position: relative;
     top: 50px;
 }
+
+#rentRequestTable{
+    position: relative;
+    top: 250px;
+}
                                     /*add vehicle*/
 #vehicleForm{
     position: relative;
