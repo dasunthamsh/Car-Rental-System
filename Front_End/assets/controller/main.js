@@ -235,7 +235,7 @@ loadCarsToDashboard=()=> {
 
                                     <!-- Modal Header -->
                                     <div class="modal-header">
-                                        <h6 id="rentId">R2635</h6>
+                                        <h6 id="rentId">R2f175</h6>
                                         <h4 class="modal-title">Rent Vehicle</h4>
                                         <a class="close" id="closeWindow" href="#">&times;</a>
 
@@ -360,7 +360,7 @@ loadCarsToDashboard=()=> {
 
                 $("#viewImg").on("click", "#btnCarRent", function() {
 
-                    var rentFormDate = new FormData();
+                   // var rentFormDate = new FormData();
 
                     let pickupDate = $("#picUpTime").val();
                      let returnDate = $("#ReturnDate").val();
@@ -373,16 +373,31 @@ loadCarsToDashboard=()=> {
                     let registrationNO = $("#viewImg").find("#regNumberH6").text();
 
 
-                    rentFormDate.append("rentId", rentId);
-                    rentFormDate.append("date", date);
-                    rentFormDate.append("pickupDate", pickupDate);
-                    rentFormDate.append("returnDate", returnDate);
-                    rentFormDate.append("pickUpVenue", pickUpVenue);
-                    rentFormDate.append("returnVenue", returnVenue);
-                    rentFormDate.append("status", status);
-                    rentFormDate.append("registrationNO", registrationNO);
-                    rentFormDate.append("customerId", customerId);
+                    // rentFormDate.append("rentId", rentId);
+                    // rentFormDate.append("date", date);
+                    // rentFormDate.append("pickupDate", pickupDate);
+                    // rentFormDate.append("returnDate", returnDate);
+                    // rentFormDate.append("pickUpVenue", pickUpVenue);
+                    // rentFormDate.append("returnVenue", returnVenue);
+                    // rentFormDate.append("status", status);
+                    // rentFormDate.append("registrationNO", registrationNO);
+                    // rentFormDate.append("customerId", customerId);
 
+                    var rent = {
+                        "rentId":rentId,
+                        "date":date,
+                        "pickupDate":pickupDate,
+                        "returnDate":returnDate,
+                        "pickUpVenue":pickUpVenue,
+                        "returnVenue":returnVenue,
+                        "status":status,
+                        "car": {
+                            "registrationNO": registrationNO
+                        },
+                        "customer": {
+                            "customerId": customerId
+                        }
+                    }
 
                     //  let imgFront = $("#frontView")[0].files[0];
                     //  let imgFrontName = $("#frontView")[0].files[0].name;
@@ -392,12 +407,13 @@ loadCarsToDashboard=()=> {
                     $.ajax({
                         url:baseUrl+"addRent",
                         method:"post",
-                        data: rentFormDate,
+                        data: JSON.stringify(rent),
                         dataType: "json",
-                        async: true,
-                        contentType: false,
-                        processData: false,
-                        enctype: "multipart/form-data",
+                        contentType:"application/json",
+                        // async: true,
+                        // contentType: false,
+                        // processData: false,
+                        // enctype: "multipart/form-data",
                         success:function (resp) {
                             alert("successful Uploaded");
                         },
