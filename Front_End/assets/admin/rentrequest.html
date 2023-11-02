@@ -48,23 +48,23 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label for="driver" class="fw-bold">Driver</label>
-                            <input type="text" class="form-control" id="driver" name="driver" placeholder="Enter your address" required >
+                            <label for="rentRequestDriver" class="fw-bold">Driver</label>
+                            <input type="text" class="form-control" id="rentRequestDriver" name="driver" placeholder="Enter your address" required >
                         </div>
                     </div>
                     <div class="col-md-4" >
                         <div>
                             <div class="form-group mb-3">
-                                <label for="customer" class="fw-bold">Customer Id</label>
-                                <input type="password" class="form-control" id="customer" name="customer" placeholder="Choose a password" required>
+                                <label for="rentRequestCustomer" class="fw-bold">Customer Id</label>
+                                <input type="text" class="form-control" id="rentRequestCustomer" name="customer" placeholder="Choose a password" required>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4" >
                         <div>
                             <div class="form-group mb-3">
-                                <label for="rentId" class="fw-bold">Rent Id</label>
-                                <input type="tel" class="form-control" id="rentId" name="rentId" placeholder="Enter your phone number" required>
+                                <label for="rentRequestRentId" class="fw-bold">Rent Id</label>
+                                <input type="text" class="form-control" id="rentRequestRentId" name="rentRequestRentId" placeholder="Enter your phone number" required>
                             </div>
                         </div>
 
@@ -80,7 +80,7 @@
     <section id="rentRequestTable">
         <div class="container">
             <h2>Rent Information</h2>
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="requestTable">
                 <thead>
                 <tr>
                     <th>Rent ID</th>
