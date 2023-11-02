@@ -29,6 +29,14 @@ loadRentRequest=()=>{
     });
 }
 
-$("#acceptRentRequest").click(function (){
-    alert("fdfd");
+
+$(document).ready(function() {
+    $('#requestTable tbody').on('click', 'tr', function() {
+        var rentId = $(this).find('td:eq(0)').text();
+        var customerId = $(this).find('td:eq(1)').text();
+
+            $("#rentRequestCustomer").val(rentId);
+            $("#rentRequestRentId").val(customerId);
+
+    });
 });
