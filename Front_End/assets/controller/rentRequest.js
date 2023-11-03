@@ -6,14 +6,14 @@ loadRentRequest=()=>{
         method:"get",
         success:function (resp){
             for (const i of resp.data) {
-                var customer = i.customer;
-                var rentId = i.rentId;
-               // var carId = i.car.registrationNO;
                 var driver = i.driver;
+                var rentId = i.rentId;
                 var picUpDate = i.pickupDate;
                 var picUpPlace = i.pickUpVenue;
-                var returnDate = i.returnDate;
-                var returnPlace = i.returnValue;
+                var returnDate = i.returnDate
+                var returnPlace = i.returnVenue;
+                var status = i.status;
+                var time = i.date;
 
                 if (i.car) {
                     var registrationNO = i.car.registrationNO;
@@ -22,7 +22,8 @@ loadRentRequest=()=>{
                     var customerId = i.customer.customerId;
                 }
 
-                var row = `<tr><td>${rentId}</td><td>${registrationNO}</td><td>${customerId}</td><td>${driver}</td><td>${picUpDate}</td><td>${picUpPlace}</td><td>${returnDate}</td><td>${returnPlace}</td></tr>`;
+
+                var row = `<tr><td>${rentId}</td><td>${registrationNO}</td><td>${customerId}</td><td>${driver}</td><td>${picUpDate}</td><td>${picUpPlace}</td><td>${returnDate}</td><td>${returnPlace}</td><td>${status}</td><td>${time}</td></tr>`;
                 $("#rentRequestTableBody").append(row);
             }
         }
@@ -30,13 +31,69 @@ loadRentRequest=()=>{
 }
 
 
+let datee;
+let pickUpPlace;
+let returnPlace;
+let pickUpDate;
+let returnDate;
+
 $(document).ready(function() {
     $('#requestTable tbody').on('click', 'tr', function() {
         var rentId = $(this).find('td:eq(0)').text();
-        var customerId = $(this).find('td:eq(1)').text();
+        var carRegNumber = $(this).find('td:eq(1)').text();
+        var customerId = $(this).find('td:eq(2)').text();
+         pickUpDate = $(this).find('td:eq(4)').text();
+         pickUpPlace = $(this).find('td:eq(5)').text();
+        returnDate = $(this).find('td:eq(6)').text();
+         returnPlace = $(this).find('td:eq(7)').text();
+       // var status = $(this).find('td:eq(8)').text();
+        datee = $(this).find('td:eq(9)').text();
 
-            $("#rentRequestCustomer").val(rentId);
-            $("#rentRequestRentId").val(customerId);
+
+            $("#rentRequestRentId").val(rentId);
+            $("#rentRequestCustomer").val(customerId);
+            $("#rentRequestCarRegNo").val(carRegNumber);
+
+
+    });
+});
+
+
+
+$("#acceptRentRequest").click(function (){
+
+
+
+    var putRent = {
+        "rentId":$("#rentRequestRentId").val(),
+        "driver" : {
+            "licenceNo": $("#rentRequestDriver").val()
+        },
+        "car": {
+            "registrationNO": $("#rentRequestCarRegNo").val()
+        },
+        "customer": {
+            customerId : $("#rentRequestCustomer").val()
+        },
+        "status":"accept",
+        "date":datee,
+        "pickupDate":pickUpDate,
+        "returnDate":returnDate,
+        "pickUpVenue":pickUpPlace,
+        "returnVenue":returnPlace
+
+    }
+    console.log(putRent);
+
+    $.ajax({
+        url:baseUrl+"addRent/updateRent",
+        method: "put",
+        contentType:"application/json",
+        data:JSON.stringify(putRent),
+        dataType:"json",
+        success:function (resp){
+            alert("booking added");
+        }
 
     });
 });
