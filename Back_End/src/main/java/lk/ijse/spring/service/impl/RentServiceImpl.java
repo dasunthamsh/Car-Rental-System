@@ -2,13 +2,12 @@ package lk.ijse.spring.service.impl;/*
     @author Dasun
 */
 
-import lk.ijse.spring.dto.CarDTO;
+
 import lk.ijse.spring.dto.RentDTO;
-import lk.ijse.spring.entity.Car;
-import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Rent;
 import lk.ijse.spring.repo.CarRepo;
 import lk.ijse.spring.repo.CustomerRepo;
+import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.repo.RentRepo;
 import lk.ijse.spring.service.RentService;
 import org.modelmapper.ModelMapper;
@@ -34,6 +33,9 @@ public class RentServiceImpl implements RentService {
     CarRepo carRepo;
 
     @Autowired
+    DriverRepo driverRepo;
+
+    @Autowired
     ModelMapper mapper;
 
     @Override
@@ -55,4 +57,14 @@ public class RentServiceImpl implements RentService {
     }
 
 
+    @Override
+    public void rentCar(RentDTO dto) {
+        if (rentRepo.existsById(dto.getRentId())) {
+            Rent rent = mapper.map(dto, Rent.class);
+            rentRepo.save(rent);
+        } else {
+            throw new RuntimeException("Booking was added Already");
+
+        }
+    }
 }
