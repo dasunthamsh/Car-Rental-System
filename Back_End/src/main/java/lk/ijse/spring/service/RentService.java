@@ -11,4 +11,6 @@ public interface RentService {
     void bookingCar(RentDTO dto);
 
     List<RentDTO> rentRequest();
+
+    void rentCar(RentDTO dto);
 }

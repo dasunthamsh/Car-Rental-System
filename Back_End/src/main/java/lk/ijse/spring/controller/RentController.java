@@ -59,4 +59,12 @@ public class RentController {
         List<RentDTO> allRentRequest = service.rentRequest();
         return new ResponseUtil("Ok","ok",allRentRequest);
     }
+
+
+    @PutMapping("/updateRent")
+    public ResponseUtil rentCar(@RequestBody RentDTO dto){
+        service.rentCar(dto);
+        System.out.println(dto);
+        return new ResponseUtil("ok" ,"booking successful",dto);
+    }
 }
