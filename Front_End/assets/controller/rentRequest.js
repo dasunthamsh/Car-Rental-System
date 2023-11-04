@@ -22,9 +22,37 @@ loadRentRequest=()=>{
                     var customerId = i.customer.customerId;
                 }
 
-
                 var row = `<tr><td>${rentId}</td><td>${registrationNO}</td><td>${customerId}</td><td>${driver}</td><td>${picUpDate}</td><td>${picUpPlace}</td><td>${returnDate}</td><td>${returnPlace}</td><td>${status}</td><td>${time}</td></tr>`;
                 $("#rentRequestTableBody").append(row);
+
+                if (status==="Pending"){
+                    $("#rentRequestTableBody tr:last").css("background-color", "blue");
+
+                }else {
+                    $("#rentRequestTableBody tr:last").css("background-color", "yellow");
+
+                }
+
+
+                // $("#btnPendingTable").click(function (){
+                //
+                // });
+                //
+                // $("#btnReturnTable").click(function (){
+                //
+                // });
+                //
+                // if (status=="accept"){
+                //
+                //     var row = `<tr><td>${rentId}</td><td>${registrationNO}</td><td>${customerId}</td><td>${driver}</td><td>${picUpDate}</td><td>${picUpPlace}</td><td>${returnDate}</td><td>${returnPlace}</td><td>${status}</td><td>${time}</td></tr>`;
+                //     $("#rentRequestTableBody").append(row);
+                //
+                // }if (status=="Pending"){
+                //     var row = `<tr><td>${rentId}</td><td>${registrationNO}</td><td>${customerId}</td><td>${driver}</td><td>${picUpDate}</td><td>${picUpPlace}</td><td>${returnDate}</td><td>${returnPlace}</td><td>${status}</td><td>${time}</td></tr>`;
+                //     $("#rentRequestTableBody").append(row);
+                // }
+
+
             }
         }
     });
@@ -93,7 +121,55 @@ $("#acceptRentRequest").click(function (){
         dataType:"json",
         success:function (resp){
             alert("booking added");
+            updateDriver();
+            updateCar();
         }
 
     });
 });
+
+
+function updateDriver(){
+
+    $.ajax({
+        url:baseUrl+`addRent?rentId=${ $("#rentRequestRentId").val()}&option=notAvailable`,
+        method:"put",
+        dataType: "json",
+        contentType: "application/json",
+        success:function (resp){
+
+        }
+    });
+}
+
+
+function updateCar(){
+
+    $.ajax({
+        url:baseUrl+`addRent/updateCar?rentId=${ $("#rentRequestRentId").val()}&option=notAvailable`,
+        method:"put",
+        dataType: "json",
+        contentType: "application/json",
+        success:function (resp){
+
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

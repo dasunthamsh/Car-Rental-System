@@ -13,4 +13,10 @@ public interface RentService {
     List<RentDTO> rentRequest();
 
     void rentCar(RentDTO dto);
+
+     void updateDriverAvailability(String rentId, String option);
+
+    void updateCarAvailability(String rentId, String option);
+
+
 }

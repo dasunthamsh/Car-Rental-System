@@ -67,4 +67,18 @@ public class RentController {
         System.out.println(dto);
         return new ResponseUtil("ok" ,"booking successful",dto);
     }
+
+    @PutMapping(params = "rentId")
+    public ResponseUtil driverAvailability(@RequestParam String rentId, @RequestParam String option){
+        service.updateDriverAvailability(rentId , option);
+        return new ResponseUtil("ok" ,"booking successful"," ");
+    }
+
+    @PutMapping(params ="/updateCar/{rentId}")
+    public ResponseUtil carAvailability(@RequestParam String rentId, @RequestParam String option){
+        service.updateCarAvailability(rentId , option);
+        return new ResponseUtil("ok" ,"booking successful"," ");
+    }
 }
+
+

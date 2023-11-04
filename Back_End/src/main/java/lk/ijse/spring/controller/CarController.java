@@ -5,6 +5,7 @@ package lk.ijse.spring.controller;/*
 import lk.ijse.spring.dto.CarDTO;
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.service.CarService;
+import lk.ijse.spring.service.RentService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -27,6 +28,7 @@ public class CarController {
 
     @Autowired
     CarService service;
+
 
     @PostMapping(path = "/saveImg", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseUtil saveImage(CarDTO carDTO, @RequestPart("imgFrontFile") MultipartFile file1, @RequestPart("imgBackFile") MultipartFile file2, @RequestPart("imgSideFile") MultipartFile file3, @RequestPart("imgInsideFile") MultipartFile file4) {
@@ -58,4 +60,5 @@ public class CarController {
         return new ResponseUtil("OK","Successfull",allCar);
 
     }
+
 }

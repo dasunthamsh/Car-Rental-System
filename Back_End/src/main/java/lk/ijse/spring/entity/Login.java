@@ -18,10 +18,10 @@ import javax.persistence.Id;
 public class Login {
 
     @Id
-    private String loginId;
-    private String role;
     private String username;
     private String password;
+    // private String loginId;
+    private String role;
 
 
 }

@@ -2,6 +2,7 @@ package lk.ijse.spring.controller;/*
     @author Dasun
 */
 
+import lk.ijse.spring.dto.CarDTO;
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.service.CustomerService;
 import lk.ijse.spring.util.ResponseUtil;
@@ -13,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/customer")
@@ -47,6 +49,13 @@ public class CustomerController {
 
     }
 
+    @GetMapping
+    public ResponseUtil getAllCustomer(){
+        List<CustomerDTO> allCustomer = service.getAllCustomers();
+        return new ResponseUtil("OK","Successfull",allCustomer);
+
+    }
 
     }
 /////////
+

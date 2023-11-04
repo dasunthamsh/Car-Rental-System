@@ -67,4 +67,17 @@ public class RentServiceImpl implements RentService {
 
         }
     }
+
+    @Override
+    public void updateDriverAvailability(String rentId, String option) {
+        Rent rent = rentRepo.findById(rentId).get();
+        rent.getDriver().setAvailability("notAvailable");
+        rentRepo.save(rent);
+    }
+
+    @Override
+    public void updateCarAvailability(String rentId, String option) {
+        Rent rent = rentRepo.findById(rentId).get();
+        rent.getCar().setStatus("notAvailable");
+    }
 }

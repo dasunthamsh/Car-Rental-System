@@ -1,4 +1,57 @@
 
+
+//login function
+
+logIn=()=>{
+
+    var login = undefined;
+
+    if ($("#LoginRole").val()=="Customer"){
+        login = "customer";
+    }if ($("#LoginRole").val()=="Admin"){
+
+        login= "admin";
+    }else {
+        login = "driver";
+    }
+
+    function customerLogin(){
+
+
+        var loginOb = {
+            "username":$("#LoginUsername").val(),
+            "password":$("#LoginPassword").val()
+        }
+
+        $.ajax({
+            url:baseUrl+"login",
+            method:"post",
+            contentType: 'application/json',
+            data: JSON.stringify(loginOb),
+            success: function(response) {
+                console.log(response);
+            }
+        });
+
+    }
+
+
+    }
+
+
+$(document).ready(function() {
+    $('#loginHeaderBtn').on('click', function() {
+        $('#loginSection').show();
+        $('#loginHeaderBtn').hide();
+    });
+
+    $('#closeWindowInLogin').on('click', function() {
+        $('#loginSection').hide();
+        $('#loginHeaderBtn').show();
+    });
+});
+
+
 //check role
 $(document).ready(function() {
     $("#Role").on("change", function() {
@@ -123,6 +176,7 @@ function addAdmin() {
                 enctype: "multipart/form-data",
                 success:function (resp) {
                     alert("successful Uploaded");
+                    loadDataToLogin();
                 },
                 error:function (err){
                     console.log(err);
@@ -135,7 +189,28 @@ function addAdmin() {
 
 });
 
+function loadDataToLogin(){
 
+
+    var loginObject ={
+            "password":$("#password").val(),
+            "username":$("#username").val(),
+            "role":  $("#Role").val()
+    }
+
+    $.ajax({
+        url: baseUrl+"login",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(loginObject),
+        dataType: "json",
+        success: function (resp) {
+            alert(resp)
+        },
+
+
+    });
+}
 
 
 ////////////////// load all customer
@@ -235,7 +310,7 @@ loadCarsToDashboard=()=> {
 
                                     <!-- Modal Header -->
                                     <div class="modal-header">
-                                        <h6 id="rentId">R2f175</h6>
+                                        <h6 id="rentId">R2f1r75</h6>
                                         <h4 class="modal-title">Rent Vehicle</h4>
                                         <a class="close" id="closeWindow" href="#">&times;</a>
 
@@ -418,7 +493,7 @@ loadCarsToDashboard=()=> {
                             alert("successful Uploaded");
                         },
                         error:function (err){
-                            console.log(err);
+                            console.log("you must login or register");
                         }
 
                     });

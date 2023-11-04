@@ -23,6 +23,27 @@ a:hover{     /*change mouse fourcus color to yellow in menu*/
 
 }
 
+
+#loginSection {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 31;
+    height: 400px;
+    top: 30vh;
+    background: white;
+    width: 800px;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    display: none;
+}
+
+#closeWindowInLogin{
+    position: relative;
+    left: 750px;
+}
+
 header{
     position: fixed;
 }
