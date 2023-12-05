@@ -18,5 +18,6 @@ public interface RentService {
 
     void updateCarAvailability(String rentId, String option);
 
+    void deleteDriver(String licenceNo);
 
 }

@@ -2,41 +2,30 @@
 
 //login function
 
-logIn=()=>{
-
-    var login = undefined;
-
-    if ($("#LoginRole").val()=="Customer"){
-        login = "customer";
-    }if ($("#LoginRole").val()=="Admin"){
-
-        login= "admin";
-    }else {
-        login = "driver";
-    }
-
-    function customerLogin(){
 
 
-        var loginOb = {
-            "username":$("#LoginUsername").val(),
-            "password":$("#LoginPassword").val()
-        }
+    // function customerLogin(){
+    //
+    //
+    //     var loginOb = {
+    //         "username":$("#LoginUsername").val(),
+    //         "password":$("#LoginPassword").val()
+    //     }
+    //
+    //     $.ajax({
+    //         url:baseUrl+"login",
+    //         method:"post",
+    //         contentType: 'application/json',
+    //         data: JSON.stringify(loginOb),
+    //         success: function(response) {
+    //             console.log(response);
+    //         }
+    //     });
+    //
+    // }
 
-        $.ajax({
-            url:baseUrl+"login",
-            method:"post",
-            contentType: 'application/json',
-            data: JSON.stringify(loginOb),
-            success: function(response) {
-                console.log(response);
-            }
-        });
-
-    }
 
 
-    }
 
 
 $(document).ready(function() {
@@ -46,7 +35,7 @@ $(document).ready(function() {
     });
 
     $('#closeWindowInLogin').on('click', function() {
-        $('#loginSection').hide();
+        $('#loginSection,#loginBtn').hide();
         $('#loginHeaderBtn').show();
     });
 });
@@ -189,6 +178,8 @@ function addAdmin() {
 
 });
 
+                                                // fill login table
+
 function loadDataToLogin(){
 
 
@@ -206,11 +197,42 @@ function loadDataToLogin(){
         dataType: "json",
         success: function (resp) {
             alert(resp)
+
         },
+        error:function (error){
+            alert("error");
+        }
 
 
     });
 }
+
+$("#loginBtn").click(function (){
+
+    $.ajax({
+        url:baseUrl+"login/"+$("#LoginUsername").val(),
+        method:"get",
+        success:function (resp){
+            console.log(resp);
+
+
+                alert("successful login");
+
+                    if ($("#LoginRole").val() === "Customer") {
+                    }
+                    if ($("#LoginRole").val() === "Admin") {
+
+                        window.location.href="assets/admin/dashboard.html";
+
+                    } if ($("#LoginRole").val() === "Driver") {
+
+                window.location.href="assets/admin/driverdetails.html";
+
+
+            }
+        }
+    });
+});
 
 
 ////////////////// load all customer

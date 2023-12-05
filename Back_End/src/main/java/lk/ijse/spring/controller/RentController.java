@@ -79,6 +79,12 @@ public class RentController {
         service.updateCarAvailability(rentId , option);
         return new ResponseUtil("ok" ,"booking successful"," ");
     }
+
+    @DeleteMapping(params = {"rentId"})
+    public ResponseUtil deleteRent(@RequestParam String licenceNo) {
+        service.deleteDriver(licenceNo);
+        return new ResponseUtil("200", "Deleted", null);
+    }
 }
 
 

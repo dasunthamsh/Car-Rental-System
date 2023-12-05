@@ -21,8 +21,11 @@ loadRentRequest=()=>{
                 if (i.customer) {
                     var customerId = i.customer.customerId;
                 }
+                if (i.driver) {
+                    var licenceNo = i.driver.licenceNo;
+                }
 
-                var row = `<tr><td>${rentId}</td><td>${registrationNO}</td><td>${customerId}</td><td>${driver}</td><td>${picUpDate}</td><td>${picUpPlace}</td><td>${returnDate}</td><td>${returnPlace}</td><td>${status}</td><td>${time}</td></tr>`;
+                var row = `<tr><td>${rentId}</td><td>${registrationNO}</td><td>${customerId}</td><td>${licenceNo}</td><td>${picUpDate}</td><td>${picUpPlace}</td><td>${returnDate}</td><td>${returnPlace}</td><td>${status}</td><td>${time}</td></tr>`;
                 $("#rentRequestTableBody").append(row);
 
                 if (status==="Pending"){
@@ -160,13 +163,46 @@ function updateCar(){
 
 
 
+//////////////////////////////////////// return driver and car
+
+
+    $("#driverUpdate").click(function (){
+alert("sdd");
+
+    $.ajax({
+        url:baseUrl+`return?rentId=${ $("#rentRequestRentId").val()}&option=Available`,
+        method:"put",
+        dataType: "json",
+        contentType: "application/json",
+        success:function (resp){
+
+        }
+
+        });
+    });
 
 
 
 
 
 
+///////////////// reject
 
+
+
+$("#driverDelete").click(function (){
+
+    $.ajax({
+        url: baseUrl + "addRent?rentId=" + $("#rentRequestRentId").val(),
+        method: "DELETE",
+        success: function (res) {
+
+        },
+        error: function (ob) {
+
+        }
+    });
+});
 
 
 

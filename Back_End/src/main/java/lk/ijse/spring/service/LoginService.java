@@ -9,4 +9,7 @@ public interface LoginService {
 
     void saveLogin (LoginDTO dto);
 
+    LoginDTO loginToSystem(String username);
+
+
 }

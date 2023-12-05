@@ -31,9 +31,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="driverdetails.html">MANAGE DRIVER</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="payment.html">INCOME</a>
-                </li>
+
             </ul>
         </div>
     </nav>
@@ -55,12 +53,19 @@
                             <label for="rentRequestCarRegNo" class="fw-bold">Car Reg no</label>
                             <input type="text" class="form-control" id="rentRequestCarRegNo" name="driver" placeholder="Enter your address" required >
                         </div>
+
                     </div>
                     <div class="col-md-4" >
                         <div>
                             <div class="form-group mb-3">
                                 <label for="rentRequestCustomer" class="fw-bold">Customer Id</label>
                                 <input type="text" class="form-control" id="rentRequestCustomer" name="customer" placeholder="Choose a password" required>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-group mb-3">
+                                <label for="loosDamage" class="fw-bold">loos Damage</label>
+                                <input type="text" class="form-control" id="loosDamage" name="rentRequestRentId" placeholder="loos Damage" required>
                             </div>
                         </div>
                     </div>
@@ -77,6 +82,7 @@
                 <button type="button" class="btn btn-primary fw-bold" id="acceptRentRequest">Accept</button>
                 <button type="button" class="btn btn-primary fw-bold" id="driverDelete">Reject</button>
                 <button type="button" class="btn btn-primary fw-bold" id="driverUpdate">Return</button>
+                <button type="button" class="btn btn-primary fw-bold" id="updateRent">Update</button>
             </form>
         </div>
     </section>

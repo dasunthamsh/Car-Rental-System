@@ -26,4 +26,15 @@ public class LoginServiceImpl implements LoginService {
     public void saveLogin(LoginDTO dto) {
             loginRepo.save(mapper.map(dto,Login.class));
     }
+
+    @Override
+    public LoginDTO loginToSystem(String username) {
+        if (loginRepo.existsById(username)) {
+            return mapper.map(loginRepo.findById(username).get(),LoginDTO.class);
+        }else {
+            throw new RuntimeException("Driver Not Found...");
+
+        }
+
+        }
 }

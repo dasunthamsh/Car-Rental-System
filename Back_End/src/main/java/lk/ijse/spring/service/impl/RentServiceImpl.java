@@ -80,4 +80,14 @@ public class RentServiceImpl implements RentService {
         Rent rent = rentRepo.findById(rentId).get();
         rent.getCar().setStatus("notAvailable");
     }
+
+
+    @Override
+    public void deleteDriver(String rentId) {
+        if (rentRepo.existsById(rentId)) {
+            rentRepo.deleteById(rentId);
+        } else {
+            throw new RuntimeException("No Such Driver To Delete");
+        }
+    }
 }
