@@ -10,8 +10,5 @@
         <module name="Back_End" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Back_End" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
