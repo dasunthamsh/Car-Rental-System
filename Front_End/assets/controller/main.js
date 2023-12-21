@@ -265,66 +265,45 @@ loadCarsToDashboard=()=> {
 
                 console.log(i);
 
-                var addSection = `<div  class="carousel-item active">
-                        <section class="ovrVehicleClass">
-                            <h1>${type}</h1>
-                            <h2>${brand}</h2>
-                        </section>
+                var addSection =  `<div class=" h-100 w-100 m-4 shadow-lg p-5 mb-5 bg-white rounded">
 
-                        <img src="${'assets/img/' + frontViewImage}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <div id="carDetails"  style="color: black">
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/seet.png" width="50">
-                                    </div>
-                                    <h6 id="textPassenger">${noOfPassengers}</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/speed.png" width="50">
-                                    </div>
-                                    <h6>${priceForExtraKm}</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/fule.png" width="50">
-                                    </div>
-                                    <h6>${fuelType}</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/color.png" width="50">
-                                    </div>
-                                    <h6>${color}</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/bumber.png" width="50">
-                                    </div>
-                                    <h6 id="regNumberH6">${registrationNO}</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <img src="assets/img/type.png" width="50">
-                                    </div>
-                                    <h6>${transmissionType}</h6>
-                                </aside>
-                                <aside>
-                                    <div>
-                                        <button  id="btnPopUp" class="border-light rounded-circle shadow-none">
-                                            <img src="assets/img/white.png" width="50">                                            
-                                      </button>
-                                    </div>
-                                    <h6>Rent</h6>
-                                </aside>
-                            </div>
-                        </div>
-                        
-                  
-            
+                                            <div class="d-flex align-item-center justify-content-center">
+                                                <h2>${brand}</h2>
+                                            </div>
+                                               
+                                                <img src="${'assets/img/' + frontViewImage}" class="d-block w-100" alt="...">
+                                                <div class="h-50 bg-secondary"></div>
+                                                
+                                                <div class="d-flex mt-3">
+                                                    <h6>No Of Passengers   &nbsp;&nbsp; : &nbsp;&nbsp; </h6>
+                                                    <h6 id="textPassenger">${noOfPassengers}</h6>
+                                                </div>
+                                                <div class="d-flex mt-3">
+                                                    <h6>Price For Extra Km   &nbsp;&nbsp; : &nbsp;&nbsp; </h6>
+                                                    <h6>${priceForExtraKm}</h6>
+                                                </div>
+                                                <div class="d-flex mt-3">
+                                                    <h6>fuel Type  &nbsp;&nbsp; : &nbsp;&nbsp; </h6>
+                                                    <h6>${fuelType}</h6>
+                                                </div>
+                                                 <div class="d-flex mt-3">
+                                                    <h6>Color   &nbsp;&nbsp; : &nbsp;&nbsp; </h6>
+                                                    <h6>${color}</h6>
+                                                </div>
+                                                 <div class="d-flex mt-3">
+                                                    <h6>Registration NO   &nbsp;&nbsp; : &nbsp;&nbsp; </h6>
+                                                    <h6 id="regNumberH6">${registrationNO}</h6>
+                                                </div>
+                                                 <div class="d-flex mt-3">
+                                                    <h6> Transmission Type  &nbsp;&nbsp; : &nbsp;&nbsp; </h6>
+                                                    <h6>${transmissionType}</h6>
+                                                </div>
+                                                
+                                              <button id="btnPopUp" class="btn btn-primary mt-2 shadow-none border-0">More Detsils</button>
+                                            </div>
+
 <!--                        //////////////////////////////////////////-->
-                        
+
                         <div class="registrationModal" id="popUpdiv">
                         <div id="innerDiv" class="container">
                             <div class="modal-dialog">
@@ -423,23 +402,22 @@ loadCarsToDashboard=()=> {
                             </div>
                         </div>
                     </div>
-                 </div>`;
+                 </div>`
+
+                $("#carDiv").append(addSection);
 
 
-                $("#viewImg").append(addSection);
 
                 $(document).ready(function() {
                     $(document).on("click", "#btnPopUp", function() {
-                        // Find and show the associated modal based on the structure of your HTML
                         $(this).closest('.carousel-item').find('.registrationModal').css("display", "block");
                     });
                 });
 
 
                 $(document).ready(function() {
-                    // Close the modal when clicking the closeWindow element
                     $(document).on("click", "#closeWindow", function(e) {
-                        e.preventDefault(); // Prevent the default action of the link
+                        e.preventDefault();
                         $(this).closest('.registrationModal').css("display", "none");
                     });
                 });
@@ -455,7 +433,7 @@ loadCarsToDashboard=()=> {
 
 
 
-                $("#viewImg").on("click", "#btnCarRent", function() {
+                $("#carDiv").on("click", "#btnCarRent", function() {
 
                    // var rentFormDate = new FormData();
 
@@ -464,10 +442,10 @@ loadCarsToDashboard=()=> {
                      let pickUpVenue = $("#picUpPlace").val();
                      let returnVenue = $("#returnPlace").val();
                      let customerId = $("#customerId").val();
-                    let rentId = $("#viewImg").find("#rentId").text();
+                    let rentId = $("#carDiv").find("#rentId").text();
                     let date = localDate;
                     let status = "Pending";   // catch request
-                    let registrationNO = $("#viewImg").find("#regNumberH6").text();
+                    let registrationNO = $("#carDiv").find("#regNumberH6").text();
 
 
                     // rentFormDate.append("rentId", rentId);
