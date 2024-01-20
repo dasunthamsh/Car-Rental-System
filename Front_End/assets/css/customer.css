@@ -192,7 +192,6 @@ main>section:nth-child(3) {
     position: relative;
     top: 100vh;
     height: 130vh;
-    overflow: hidden;
 }
 
 main>section:nth-child(3)>aside:nth-child(1) {
@@ -217,6 +216,26 @@ main>section:nth-child(3)>aside:nth-child(1) {
     opacity: 20%;
     bottom: 45px;
 }
+
+/*.mainDiv{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.carNames>h1{*/
+/*    background: #0a53be;*/
+/*    padding: 10px;*/
+/*}*/
+
+/*.detailsDiv>div{*/
+/*    display: flex;*/
+/*    gap: 15px;*/
+/*    border: 1px solid;*/
+/*    font-family: 'Poppins';*/
+/*    padding-left: 20px;*/
+/*    padding-right: 20px;*/
+/*}*/
+
 
 #carDetails{
     display: flex;
@@ -255,6 +274,17 @@ main>section:nth-child(3)>aside:nth-child(1) {
     font-size: 50px;
 }
 
+
+                                        /*search Car*/
+
+.searchCar{
+    position: relative;
+    top: 350px;
+    margin: 100px;
+}
+.searchButton{
+    margin-bottom: 10px
+}
 
                                         /*register*/
 
