@@ -1,40 +1,34 @@
-
-
 //login function
 
 
-
-    // function customerLogin(){
-    //
-    //
-    //     var loginOb = {
-    //         "username":$("#LoginUsername").val(),
-    //         "password":$("#LoginPassword").val()
-    //     }
-    //
-    //     $.ajax({
-    //         url:baseUrl+"login",
-    //         method:"post",
-    //         contentType: 'application/json',
-    //         data: JSON.stringify(loginOb),
-    //         success: function(response) {
-    //             console.log(response);
-    //         }
-    //     });
-    //
-    // }
-
+// function customerLogin(){
+//
+//
+//     var loginOb = {
+//         "username":$("#LoginUsername").val(),
+//         "password":$("#LoginPassword").val()
+//     }
+//
+//     $.ajax({
+//         url:baseUrl+"login",
+//         method:"post",
+//         contentType: 'application/json',
+//         data: JSON.stringify(loginOb),
+//         success: function(response) {
+//             console.log(response);
+//         }
+//     });
+//
+// }
 
 
-
-
-$(document).ready(function() {
-    $('#loginHeaderBtn').on('click', function() {
+$(document).ready(function () {
+    $('#loginHeaderBtn').on('click', function () {
         $('#loginSection').show();
         $('#loginHeaderBtn').hide();
     });
 
-    $('#closeWindowInLogin').on('click', function() {
+    $('#closeWindowInLogin').on('click', function () {
         $('#loginSection,#loginBtn').hide();
         $('#loginHeaderBtn').show();
     });
@@ -42,8 +36,8 @@ $(document).ready(function() {
 
 
 //check role
-$(document).ready(function() {
-    $("#Role").on("change", function() {
+$(document).ready(function () {
+    $("#Role").on("change", function () {
         const selectedRole = $(this).val();
 
         if (selectedRole === "Admin") {
@@ -60,61 +54,56 @@ $(document).ready(function() {
 });
 
 
-
-
-
-
 //const mainUrl = "http://localhost:8080/rent/";
 
 var roal = undefined;
 
-$("#btnReg").click(function (){
+$("#btnReg").click(function () {
 
     var role = $("#Role").val();
 
     const selectedRole = $("#Role").val();
-    if(selectedRole=="Admin"){
+    if (selectedRole == "Admin") {
         addAdmin();
 
 
-    }else if (selectedRole=="Customer"){
+    } else if (selectedRole == "Customer") {
         addCustomer();
 
-    }else{
-        roal="driver";
+    } else {
+        roal = "driver";
     }
 
-function addAdmin() {
+    function addAdmin() {
 
 
-
-    var admin = {
-        "adminId": $("#attendId").val(),
-        "name": $("#attendName").val(),
-        "contact": $("#phoneNumber").val(),
-        "email": $("#email").val(),
-        "username": $("#username").val(),
-        "password": $("#password").val()
-    }
-
-
-    $.ajax({
-        url: baseUrl + "admin",
-        method: "post",
-        contentType: "application/json",
-        data: JSON.stringify(admin),
-        dataType: "json",
-        success: function (resp) {
-            alert(resp)
-        },
-        error: function (ob) {
-
+        var admin = {
+            "adminId": $("#attendId").val(),
+            "name": $("#attendName").val(),
+            "contact": $("#phoneNumber").val(),
+            "email": $("#email").val(),
+            "username": $("#username").val(),
+            "password": $("#password").val()
         }
 
-    });
-}
 
-    function addCustomer(){
+        $.ajax({
+            url: baseUrl + "admin",
+            method: "post",
+            contentType: "application/json",
+            data: JSON.stringify(admin),
+            dataType: "json",
+            success: function (resp) {
+                alert(resp)
+            },
+            error: function (ob) {
+
+            }
+
+        });
+    }
+
+    function addCustomer() {
 
 
         var formData = new FormData();
@@ -132,13 +121,13 @@ function addAdmin() {
 
         formData.append("customerId", customerId);
         formData.append("name", name);
-        formData.append("address",address);
-        formData.append("contactNo",contactNo);
-        formData.append("email",email);
-        formData.append("nicNo",nicNo);
-        formData.append("licenceNo",licenceNo);
-        formData.append("userName",userName);
-        formData.append("password",password);
+        formData.append("address", address);
+        formData.append("contactNo", contactNo);
+        formData.append("email", email);
+        formData.append("nicNo", nicNo);
+        formData.append("licenceNo", licenceNo);
+        formData.append("userName", userName);
+        formData.append("password", password);
 
 
         let imgBack = $("#idCardPhotoFront")[0].files[0];
@@ -154,43 +143,43 @@ function addAdmin() {
         formData.append("imgLicenceFile", imgInside, imgInsideName);
 
 
-            $.ajax({
-                url:baseUrl+"customer/saveImg",
-                method: "post",
-                data: formData,
-                dataType: "json",
-                async: true,
-                contentType: false,
-                processData: false,
-                enctype: "multipart/form-data",
-                success:function (resp) {
-                    alert("successful Uploaded");
-                    loadDataToLogin();
-                },
-                error:function (err){
-                    console.log(err);
-                }
+        $.ajax({
+            url: baseUrl + "customer/saveImg",
+            method: "post",
+            data: formData,
+            dataType: "json",
+            async: true,
+            contentType: false,
+            processData: false,
+            enctype: "multipart/form-data",
+            success: function (resp) {
+                alert("successful Uploaded");
+                loadDataToLogin();
+            },
+            error: function (err) {
+                console.log(err);
+            }
 
-            });
+        });
 
 
     }
 
 });
 
-                                                // fill login table
+// fill login table
 
-function loadDataToLogin(){
+function loadDataToLogin() {
 
 
-    var loginObject ={
-            "password":$("#password").val(),
-            "username":$("#username").val(),
-            "role":  $("#Role").val()
+    var loginObject = {
+        "password": $("#password").val(),
+        "username": $("#username").val(),
+        "role": $("#Role").val()
     }
 
     $.ajax({
-        url: baseUrl+"login",
+        url: baseUrl + "login",
         method: "post",
         contentType: "application/json",
         data: JSON.stringify(loginObject),
@@ -199,7 +188,7 @@ function loadDataToLogin(){
             alert(resp)
 
         },
-        error:function (error){
+        error: function (error) {
             alert("error");
         }
 
@@ -207,26 +196,27 @@ function loadDataToLogin(){
     });
 }
 
-$("#loginBtn").click(function (){
+$("#loginBtn").click(function () {
 
     $.ajax({
-        url:baseUrl+"login/"+$("#LoginUsername").val(),
-        method:"get",
-        success:function (resp){
+        url: baseUrl + "login/" + $("#LoginUsername").val(),
+        method: "get",
+        success: function (resp) {
             console.log(resp);
 
 
-                alert("successful login");
+            alert("successful login");
 
-                    if ($("#LoginRole").val() === "Customer") {
-                    }
-                    if ($("#LoginRole").val() === "Admin") {
+            if ($("#LoginRole").val() === "Customer") {
+            }
+            if ($("#LoginRole").val() === "Admin") {
 
-                        window.location.href="assets/admin/dashboard.html";
+                window.location.href = "assets/admin/dashboard.html";
 
-                    } if ($("#LoginRole").val() === "Driver") {
+            }
+            if ($("#LoginRole").val() === "Driver") {
 
-                window.location.href="assets/admin/driverdetails.html";
+                window.location.href = "assets/admin/driverdetails.html";
 
 
             }
@@ -237,12 +227,14 @@ $("#loginBtn").click(function (){
 
 ////////////////// load all customer
 
-loadCarsToDashboard=()=> {
+
+loadCarsToDashboard = () => {
+
 
     $.ajax({
-        url: baseUrl+"car",
+        url: baseUrl + "car",
         method: "get",
-        success:function (resp){
+        success: function (resp) {
             for (let i of resp.data) {
 
 
@@ -263,17 +255,20 @@ loadCarsToDashboard=()=> {
                 var sideView = i.sideView;
                 var internalView = i.internalView;
 
-                console.log(i);
 
-                var addSection =  `<div class=" h-100 w-100 m-4 shadow-lg p-5 mb-5 bg-white rounded">
+
+                var returnCarType = `<option value="location1">${brand}</option>`
+                $("#SearchCarType").append(returnCarType);
+
+                var addSection = `<div class=" h-100 w-100 m-4 shadow-lg p-5 mb-5 bg-white rounded">
 
                                             <div class="d-flex align-item-center justify-content-center">
                                                 <h2>${brand}</h2>
                                             </div>
-                                               
+
                                                 <img src="${'assets/img/' + frontViewImage}" class="d-block w-100" alt="...">
                                                 <div class="h-50 bg-secondary"></div>
-                                                
+
                                                 <div class="d-flex mt-3">
                                                     <h6>No Of Passengers   &nbsp;&nbsp; : &nbsp;&nbsp; </h6>
                                                     <h6 id="textPassenger">${noOfPassengers}</h6>
@@ -298,150 +293,35 @@ loadCarsToDashboard=()=> {
                                                     <h6> Transmission Type  &nbsp;&nbsp; : &nbsp;&nbsp; </h6>
                                                     <h6>${transmissionType}</h6>
                                                 </div>
-                                                
-                                              <button id="btnPopUp" class="btn btn-primary mt-2 shadow-none border-0">More Detsils</button>
-                                            </div>
 
-<!--                        //////////////////////////////////////////-->
+                                              <button id="btnPopUp"  class="btn btn-primary mt-2 shadow-none border-0">Reserve Now</button>
+                                            </div>`
 
-                        <div class="registrationModal" id="popUpdiv">
-                        <div id="innerDiv" class="container">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h6 id="rentId">R2f1r75</h6>
-                                        <h4 class="modal-title">Rent Vehicle</h4>
-                                        <a class="close" id="closeWindow" href="#">&times;</a>
-
-                                    </div>
-
-                                    <!-- Modal Body - Images and Form -->
-                                    <div class="modal-body">
-                                        <div class="container">
-                                            <div class="row popImgContainer mt-5">
-                                                <div class="col-md-4 popUpImg">
-                                                    <img src="${'assets/img/' +internalView }" class="img-fluid" alt="Image 1">
-                                                </div>
-                                                <div class="col-md-4 popUpImg">
-                                                    <img src="${'assets/img/' +backView }" class="img-fluid" alt="Image 2">
-                                                </div>
-                                                <div class="col-md-4 popUpImg">
-                                                    <img src="${'assets/img/' + sideView}" class="img-fluid" alt="Image 3">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Form -->
-                                        <form id="registrationForm" >
-                                            <div class="row mt-5">
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="dalyRate">Daly Rate</label>
-                                                        <input type="text" class="form-control" id="dalyRate" value="${dailyRate}" readonly>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="monthlyRate">Monthly rate</label>
-                                                        <input type="text" class="form-control" id="monthlyRate" value="${monthlyRate}" readonly>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="bankSlip">Bank Slip</label>
-                                                        <input type="file" class="form-control" id="bankSlip" name="bankSlip" required>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="customerId">CustomerId</label>
-                                                        <input type="text" class="form-control" id="customerId"  required>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="lossDamage">Loss Damage</label>
-                                                        <input type="text" class="form-control" id="lossDamage" value="${lossDamageWaiver}" readonly>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="status">status</label>
-                                                        <input type="text" class="form-control" id="status" value="${dailyRate}" readonly>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="ReturnDate">Return Date</label>
-                                                        <input type="date" class="form-control" id="ReturnDate" name="returnDate" required>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="picUpTime">PicUp Time</label>
-                                                        <input type="date" class="form-control" id="picUpTime"  name="pickUpTime"required>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="priceForExtraKm">price For Extra Km</label>
-                                                        <input type="text" class="form-control" id="priceForExtraKm" value="${priceForExtraKm}" readonly>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="freeMileage">free Mileage </label>
-                                                        <input type="text" class="form-control" id="freeMileage" value="${freeMileage}" readonly>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="returnPlace">Return Place</label>
-                                                        <input type="text" class="form-control" id="returnPlace" name="returnPlace" required>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="fw-bold" for="picUpPlace">picUp Place</label>
-                                                        <input type="text" class="form-control" id="picUpPlace" name="picUpPlack" required>
-                                                    </div>
-                                                </div>
-
-                                                <button type="button" id="btnCarRent" class="btn btn-primary mt-5 col-md-2">Rent Car</button>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 </div>`
 
                 $("#carDiv").append(addSection);
 
 
 
-                $(document).ready(function() {
-                    $(document).on("click", "#btnPopUp", function() {
-                        $(this).closest('.carousel-item').find('.registrationModal').css("display", "block");
-                    });
+
+// Event listener for the btnPopUp click
+                $("#btnPopUp").on("click", function() {
+                    // Smooth scroll to the target element with id "searchButton"
+                    $('html, body').animate({
+                        scrollTop: $("#scroll").offset().top
+                    },10); // You can adjust the duration of the animation as needed
                 });
 
 
-                $(document).ready(function() {
-                    $(document).on("click", "#closeWindow", function(e) {
-                        e.preventDefault();
-                        $(this).closest('.registrationModal').css("display", "none");
-                    });
-                });
 
-                var currentDate = new Date();
-                var localDate = currentDate.toLocaleDateString(); // Get local date as a string
+                $("#carDiv").on("click", "#btnCarRent", function () {
 
-//  booking a car
-
-
-
-
-
-
-
-                $("#carDiv").on("click", "#btnCarRent", function() {
-
-                   // var rentFormDate = new FormData();
+                    // var rentFormDate = new FormData();
 
                     let pickupDate = $("#picUpTime").val();
-                     let returnDate = $("#ReturnDate").val();
-                     let pickUpVenue = $("#picUpPlace").val();
-                     let returnVenue = $("#returnPlace").val();
-                     let customerId = $("#customerId").val();
+                    let returnDate = $("#ReturnDate").val();
+                    let pickUpVenue = $("#picUpPlace").val();
+                    let returnVenue = $("#returnPlace").val();
+                    let customerId = $("#customerId").val();
                     let rentId = $("#carDiv").find("#rentId").text();
                     let date = localDate;
                     let status = "Pending";   // catch request
@@ -459,13 +339,13 @@ loadCarsToDashboard=()=> {
                     // rentFormDate.append("customerId", customerId);
 
                     var rent = {
-                        "rentId":rentId,
-                        "date":date,
-                        "pickupDate":pickupDate,
-                        "returnDate":returnDate,
-                        "pickUpVenue":pickUpVenue,
-                        "returnVenue":returnVenue,
-                        "status":status,
+                        "rentId": rentId,
+                        "date": date,
+                        "pickupDate": pickupDate,
+                        "returnDate": returnDate,
+                        "pickUpVenue": pickUpVenue,
+                        "returnVenue": returnVenue,
+                        "status": status,
                         "car": {
                             "registrationNO": registrationNO
                         },
@@ -480,31 +360,30 @@ loadCarsToDashboard=()=> {
 
 
                     $.ajax({
-                        url:baseUrl+"addRent",
-                        method:"post",
+                        url: baseUrl + "addRent",
+                        method: "post",
                         data: JSON.stringify(rent),
                         dataType: "json",
-                        contentType:"application/json",
+                        contentType: "application/json",
                         // async: true,
                         // contentType: false,
                         // processData: false,
                         // enctype: "multipart/form-data",
-                        success:function (resp) {
+                        success: function (resp) {
                             alert("successful Uploaded");
                         },
-                        error:function (err){
+                        error: function (err) {
                             console.log("you must login or register");
                         }
 
                     });
                 });
 
-                }
+            }
         }
     });
 
 }
-
 
 
 //     $(document).on("click","#btnCarRent",function (){
