@@ -60,9 +60,71 @@
                 <h1>CAR RENTAL</h1>
                 <h2>Car Rental</h2>
                 <h3>HELPS YOU_____</h3>
-                <h4>Here you can rent a car of any brand</h4><br>
+                <h4 id="scroll">Here you can rent a car of any brand</h4><br>
                 <h6>The car Rental revolution: no more paperwork or endless waiting lines,
                     <br> premium cars guaranteed and your virtual key directly in your smartphone!</h6>
+            </div>
+
+
+            <div class="searchCar container mt-5">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+
+                        <h1 id="searchButton">Book a car</h1>
+
+                        <form>
+                            <div class="row g-3">
+                                <!-- First Row -->
+                                <div class="col-4">
+                                    <label class="form-label">Select your car-type</label>
+                                    <select type="text" class="form-control" id="SearchCarType"></select>
+                                </div>
+                                <div class="col-4">
+                                    <label  class="form-label">Pick-up</label>
+                                    <select type="text" class="form-control" id="w" >
+                                        <option value="location1"></option>
+                                        <option value="location1">Galle</option>
+                                        <option value="location1">Mathara</option>
+                                        <option value="location1">Panadura</option>
+                                        <option value="location1">Colombo</option>
+                                        <option value="location1">Nuwara</option>
+                                        <option value="location1">Hikkaduwa</option>
+                                        <option value="location1">Badulla</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <label  class="form-label">Drop-off</label>
+                                    <select type="text" class="form-control" id="e" >
+                                        <option value="location1"></option>
+                                        <option value="location1">Galle</option>
+                                        <option value="location1">Mathara</option>
+                                        <option value="location1">Panadura</option>
+                                        <option value="location1">Colombo</option>
+                                        <option value="location1">Nuwara</option>
+                                        <option value="location1">Hikkaduwa</option>
+                                        <option value="location1">Badulla</option>
+                                    </select>
+                                </div>
+
+                                <!-- Second Row -->
+                                <div class="col-4">
+                                    <label  class="form-label">Pick-up</label>
+                                    <input type="text" class="form-control" id="r" placeholder="mm/dd/yyyy">
+                                </div>
+                                <div class="col-4">
+                                    <label  class="form-label">Drop-off</label>
+                                    <input type="text" class="form-control" id="f" placeholder="mm/dd/yyyy">
+                                </div>
+
+                                <!-- Search Button -->
+                                <div class="searchButton col-4">
+                                    <button  type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
             </div>
         </section>
 
